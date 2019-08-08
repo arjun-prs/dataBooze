@@ -4,43 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".second"
     android:orientation="vertical">
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="DATABOOZE TIMETABLE MANAGEMENT SYSTEM"
-        android:layout_centerHorizontal="true"
-        android:textSize="18dp"
-        android:textColor="@color/colorAccent"/>
-    </RelativeLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Enter User ID:-" />
+        android:text="Enter Admin ID:-"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Username..."
-        android:id="@+id/edETUserName"/>
+        android:id="@+id/edETAdminID"
+        android:hint="Enter Admin ID..."/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enter Password:-"/>
+        android:text="Enter Admin Password:-"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Password..."
-        android:id="@+id/edETPassword"
+        android:id="@+id/edETAdminPassword"
+        android:hint="Enter Admin Password..."
         android:inputType="textPassword"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Proceed"
-        android:id="@+id/edButProceed"/>
+        android:id="@+id/edButAdminSave"
+        android:text="Save"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edButAdminShow"
+        android:text="Show"/>
+
 
 </LinearLayout>
