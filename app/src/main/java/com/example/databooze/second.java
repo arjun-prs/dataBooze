@@ -1,59 +1,201 @@
 package com.example.databooze;
 
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
-public class second extends AppCompatActivity implements View.OnClickListener {
-    EditText AdminID, AdminPassWord;
-    Button save, show;
+public class second extends AppCompatActivity
+        implements View.OnClickListener {
+
+    EditText studentName, studentRollNo, studentSection, studentDept, studentSemester, studentPassword;
+    Button studentAdd, studentDelete, studentModify, studentShowAll, studentShow;
     SQLiteDatabase dataBooze;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second);
-        AdminID=findViewById(R.id.edETAdminID);
-        AdminPassWord=findViewById(R.id.edETAdminPassword);
-        save=findViewById(R.id.edButAdminSave);
-        save.setOnClickListener(this);
-        dataBooze=openOrCreateDatabase("StudentDB", MODE_PRIVATE, null);
+        setContentView(R.layout.activity_main);
+
+        studentRollNo = findViewById(R.id.edETRollNo);
+        studentName = findViewById(R.id.edETStudentName);
+        studentAdd = findViewById(R.id.edButStudentAdd);
+        studentDelete = findViewById(R.id.edButStudentDelete);
+        studentModify = findViewById(R.id.edButStudentModify);
+        studentShow = findViewById(R.id.edButStudentShow);
+        studentShowAll = findViewById(R.id.edButStudentShowAll);
+        studentDept=findViewById(R.id.edETStudentDept);
+        studentSection=findViewById(R.id.edETStudentSection);
+        studentSemester=findViewById(R.id.edETStudentSemester);
+        studentPassword=findViewById(R.id.edETStudentPassword);
+        //Registering Event Handlers
+        studentAdd.setOnClickListener(this);
+        studentDelete.setOnClickListener(this);
+        studentModify.setOnClickListener(this);
+        studentShow.setOnClickListener(this);
+        studentShowAll.setOnClickListener(this);
+        // Creating database and table  
+        dataBooze = openOrCreateDatabase("dataBooze", Context.MODE_PRIVATE, null);
         dataBooze.execSQL("create table if not exists users(user_id varchar(18) primary key, password varchar(18));");
-        dataBooze.execSQL("create table if not exists admins(admin_id varchar(18) primary key, password varchar(18), foreign key(admin_id) references users(user_id));");
-
-
+        dataBooze.execSQL("create table if not exists student(roll_no varchar(18) primary key, section varchar(8), name varchar(18), dept varchar(18), semester numeric(1,0), foreign key(roll_no) references users(user_id), foreign key(section) references classes(section));");
     }
 
     @Override
-    public void onClick(View v) {
-        if (v.getId() == R.id.edButAdminSave) {
-            if (AdminID.getText().toString().trim().length() == 0 || AdminPassWord.getText().toString().trim().length() == 0)
-                Toast.makeText(this, "Error! Please Enter All Values...", Toast.LENGTH_LONG).show();
-            else {
-                dataBooze.execSQL("insert into users values('" + AdminID.getText() + "','" + AdminPassWord.getText() + "');");
-                Toast.makeText(this, "Success!!!", Toast.LENGTH_SHORT).show();
-                AdminID.setText("");
-                AdminPassWord.setText("");
-            }
-        }
-        else if (v.getId() == R.id.edButAdminShow) {
-            Cursor c = dataBooze.rawQuery("select * from users", null);
-            if (c.getCount() == 0) {
-                Toast.makeText(this, "Error No records found", Toast.LENGTH_SHORT).show();
+    public void onClick(View view) {
+        // Adding a record
+        if (view == studentAdd) {
+            // Checking empty fields
+            if (studentRollNo.getText().toString().trim().length() == 0 ||
+                    studentName.getText().toString().trim().length() == 0 ||
+                    studentSemester.getText().toString().trim().length() == 0 ||
+                    studentSection.getText().toString().trim().length() == 0 ||
+                    studentDept.getText().toString().trim().length() == 0 ||
+                    studentPassword.getText().toString().trim().length() == 0) {
+                showMessage("Error", "Please enter all values");
                 return;
             }
-            StringBuffer buffer =
-                    new StringBuffer();
-            while (c.moveToNext()) {
-                buffer.append("Admin ID: " + c.getString(0) + "\n");
-                buffer.append("Password: " + c.getString(1) + "\n");
-                Toast.makeText(this, buffer.toString(), Toast.LENGTH_LONG).show();
+            // Inserting record 
+            dataBooze.execSQL("INSERT INTO student VALUES('" + studentRollNo.getText() + "','" + studentName.getText() +
+                    "','" + studentSection.getText() + studentDept.getText() + "','" + studentSemester.getText() +  "');");
+            dataBooze.execSQL("INSERT INTO users VALUES('"+ studentRollNo.getText() + "','" + studentPassword.getText() + "');");
+                    showMessage("Success", "Record added");
+            clearText();
+        }
+        // Deleting a record 
+        if (view == studentDelete) {
+            // Checking empty roll number 
+            if (studentRollNo.getText().toString().trim().length() == 0) {
+                showMessage("Error", "Please enter Roll Number...");
+                return;
+            }
+            // Searching roll number 
+            Cursor c = dataBooze.rawQuery("SELECT *" +
+                    " FROM student WHERE rollno='" + studentRollNo.getText() + "'", null);
+            Cursor cu = dataBooze.rawQuery("SELECT *" +
+                    " FROM users WHERE rollno='" + studentRollNo.getText() + "'", null);
+            if (c.moveToFirst()) {
+                // Deleting record if found 
+                //showMessage("Success", "Record Deleted");
+                dataBooze.execSQL("DELETE FROM student WHERE rollno='" +
+                        studentRollNo.getText() + "'");
+            }
+            if (cu.moveToFirst()) {
+                // Deleting record if found 
+                showMessage("Success", "Record Deleted");
+                dataBooze.execSQL("DELETE FROM users WHERE rollno='" +
+                        studentRollNo.getText() + "'");
+            }
+            else {
+                showMessage("Error", "Invalid Rollno");
+            }
+            clearText();
+        }
+        // Modifying a record 
+        if (view == studentModify) {
+            // Checking empty roll number 
+            if (studentRollNo.getText().toString().trim().length() == 0) {
+                showMessage("Error", "Please enter Roll Number");
+                return;
+            }
+            // Searching roll number 
+            Cursor c = dataBooze.rawQuery("SELECT * FROM student WHERE rollno='" + studentRollNo.getText() + "'", null);
+            Cursor cu = dataBooze.rawQuery("SELECT * FROM users WHERE rollno='" + studentRollNo.getText() + "'", null);
+            if (c.moveToFirst()) {
+                // Modifying record if found 
+                dataBooze.execSQL("UPDATE student SET name='" +
+                        studentName.getText() + "',section='" +
+                        studentSection.getText() + "',department='" +
+                                studentDept.getText() + "',semester='" +
+                                studentSemester.getText() +
+                        "' WHERE rollno='" + studentRollNo.getText() + "'");
+                //showMessage("Success", "Record Modified");
+            }
+            if (cu.moveToFirst()) {
+                // Modifying record if found 
+                dataBooze.execSQL("UPDATE student SET password='" +
+                        studentPassword.getText()  +
+                        "' WHERE rollno='" + studentRollNo.getText() + "'");
+                showMessage("Success", "Record Modified");
+            }
+            else {
+                showMessage("Error", "Invalid Rollno");
+            }
+            clearText();
+        }
+        // Viewing a record 
+        if (view == studentShow) {
+            // Checking empty roll number 
+            if (studentRollNo.getText().toString().trim().length() == 0) {
+                showMessage("Error", "Please enter Rollno");
+                return;
+            }
+            // Searching roll number 
+            Cursor c = dataBooze.rawQuery
+                    ("SELECT * FROM student" +
+                            " WHERE rollno='" +
+                            studentRollNo.getText()
+                            + "'", null);
+
+            if (c.moveToFirst()) {
+                // Displaying record if found 
+                studentName.setText(c.getString(1));
+                studentSection.setText(c.getString(2));
+                studentDept.setText(c.getString(3));
+                studentSemester.setText(c.getString(4));
+
+            } else {
+                showMessage("Error", "Invalid Rollno");
+                clearText();
             }
         }
+        // Viewing all records 
+        if (view == studentShowAll) {
+            // Retrieving all records 
+            Cursor c = dataBooze.rawQuery
+                    ("SELECT * FROM student",
+                            null);
+            // Checking if no records found 
+            if (c.getCount() == 0) {
+                showMessage("Error", "No records found");
+                return;
+            }
+            // Appending records to a string buffer 
+            StringBuffer buffer =
+                    new StringBuffer();
+            while (c.moveToNext())
+            {
+                buffer.append("Rollno: " + c.getString(0) + "\n");
+                buffer.append("Name: " + c.getString(1) + "\n");
+                buffer.append("Marks: " + c.getString(2) + "\n\n");
+            }
+            // Displaying all records 
+            showMessage("Student Details", buffer.toString());
+        }
+        // Displaying info 
+    }
+    public void showMessage(String title, String message){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(true);
+        builder.setTitle(title);
+        builder.setMessage(message);
+        builder.show();
+    }
+    public void clearText(){
+
+        studentRollNo.setText("");
+        studentName.setText("");
+        studentSection.setText("");
+        studentDept.setText("");
+        studentSemester.setText("");
+        studentRollNo.requestFocus();
     }
 }
+
+
+
+

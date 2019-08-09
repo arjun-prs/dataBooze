@@ -4,37 +4,69 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".second"
+    tools:context=".MainActivity"
     android:orientation="vertical">
-    <TextView
+
+    <EditText
+        android:id="@+id/edETRollNo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enter Admin ID:-"/>
+        android:hint="Enter Roll Number..." />
+
+    <EditText
+        android:id="@+id/edETStudentName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Name..." />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edETAdminID"
-        android:hint="Enter Admin ID..."/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Enter Admin Password:-"/>
+        android:id="@+id/edETStudentSection"
+        android:hint="Enter Section..."/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edETAdminPassword"
-        android:hint="Enter Admin Password..."
-        android:inputType="textPassword"/>
-    <Button
+        android:id="@+id/edETStudentDept"
+        android:hint="Enter Department..."/>
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edButAdminSave"
-        android:text="Save"/>
-    <Button
+        android:id="@+id/edETStudentSemester"
+        android:hint="Enter Semester..."/>
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edButAdminShow"
-        android:text="Show"/>
+        android:id="@+id/edETStudentPassword"
+        android:hint="Enter Password..."/>
+
+    <Button
+        android:id="@+id/edButStudentAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add" />
+
+    <Button
+        android:id="@+id/edButStudentDelete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete" />
+
+    <Button
+        android:id="@+id/edButStudentModify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Modify" />
+    <Button
+        android:id="@+id/edButStudentShow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show" />
+
+    <Button
+        android:id="@+id/edButStudentShowAll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show All" />
 
 
 </LinearLayout>
