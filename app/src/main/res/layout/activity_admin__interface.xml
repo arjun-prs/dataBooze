@@ -7,10 +7,11 @@
     tools:context=".Admin_Interface"
     android:orientation="vertical">
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="WELCOME ADMIN!!!"
-        android:textSize="18dp"
+        android:textSize="28dp"
+        android:layout_gravity="center"
         android:textColor="@color/colorAccent"/>
     <Button
         android:layout_width="match_parent"
@@ -22,6 +23,31 @@
         android:layout_height="wrap_content"
         android:id="@+id/edButProceedFaculty"
         android:text="Modify Faculty Table"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edButProceedAdmin"
+        android:text="Modify Admin Table"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edButProceedClass"
+        android:text="Modify Class Table"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edButProceedClassroom"
+        android:text="Modify Classroom Table"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edButProceedCourse"
+        android:text="Modify Course Table"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edButProceedAllotment"
+        android:text="Modify Allotment Table"/>
 
 
 </LinearLayout>

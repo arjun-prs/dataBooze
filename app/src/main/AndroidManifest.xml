@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Admin_Interface"></activity>
+        <activity android:name=".seventh"></activity>
+        <activity android:name=".sixth" />
+        <activity android:name=".fifth" />
+        <activity android:name=".fourth" />
+        <activity android:name=".third" />
+        <activity android:name=".Admin_Interface" />
         <activity android:name=".second" />
         <activity android:name=".MainActivity">
             <intent-filter>

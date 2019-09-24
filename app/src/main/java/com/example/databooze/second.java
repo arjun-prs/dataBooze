@@ -20,7 +20,7 @@ public class second extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_second);
 
         studentRollNo = findViewById(R.id.edETRollNo);
         studentName = findViewById(R.id.edETStudentName);
@@ -41,8 +41,10 @@ public class second extends AppCompatActivity
         studentShowAll.setOnClickListener(this);
         // Creating database and table  
         dataBooze = openOrCreateDatabase("dataBooze", Context.MODE_PRIVATE, null);
+        dataBooze.execSQL("drop table users");
+        dataBooze.execSQL("drop table student");
         dataBooze.execSQL("create table if not exists users(user_id varchar(18) primary key, password varchar(18));");
-        dataBooze.execSQL("create table if not exists student(roll_no varchar(18) primary key, section varchar(8), name varchar(18), dept varchar(18), semester numeric(1,0), foreign key(roll_no) references users(user_id), foreign key(section) references classes(section));");
+        dataBooze.execSQL("create table if not exists student(roll_no varchar(18) primary key, name varchar(18), section varchar(8), dept varchar(18), semester varchar(8), foreign key(roll_no) references users(user_id), foreign key(section) references classes(section));");
     }
 
     @Override
@@ -61,7 +63,7 @@ public class second extends AppCompatActivity
             }
             // Inserting record 
             dataBooze.execSQL("INSERT INTO student VALUES('" + studentRollNo.getText() + "','" + studentName.getText() +
-                    "','" + studentSection.getText() + studentDept.getText() + "','" + studentSemester.getText() +  "');");
+                    "','" + studentSection.getText() + "','" + studentDept.getText() + "','" + studentSemester.getText() +  "');");
             dataBooze.execSQL("INSERT INTO users VALUES('"+ studentRollNo.getText() + "','" + studentPassword.getText() + "');");
                     showMessage("Success", "Record added");
             clearText();
@@ -75,19 +77,19 @@ public class second extends AppCompatActivity
             }
             // Searching roll number 
             Cursor c = dataBooze.rawQuery("SELECT *" +
-                    " FROM student WHERE rollno='" + studentRollNo.getText() + "'", null);
+                    " FROM student WHERE roll_no='" + studentRollNo.getText() + "'", null);
             Cursor cu = dataBooze.rawQuery("SELECT *" +
-                    " FROM users WHERE rollno='" + studentRollNo.getText() + "'", null);
+                    " FROM users WHERE user_id='" + studentRollNo.getText() + "'", null);
             if (c.moveToFirst()) {
                 // Deleting record if found 
                 //showMessage("Success", "Record Deleted");
-                dataBooze.execSQL("DELETE FROM student WHERE rollno='" +
+                dataBooze.execSQL("DELETE FROM student WHERE roll_no='" +
                         studentRollNo.getText() + "'");
             }
             if (cu.moveToFirst()) {
                 // Deleting record if found 
                 showMessage("Success", "Record Deleted");
-                dataBooze.execSQL("DELETE FROM users WHERE rollno='" +
+                dataBooze.execSQL("DELETE FROM users WHERE user_id='" +
                         studentRollNo.getText() + "'");
             }
             else {
@@ -103,8 +105,8 @@ public class second extends AppCompatActivity
                 return;
             }
             // Searching roll number 
-            Cursor c = dataBooze.rawQuery("SELECT * FROM student WHERE rollno='" + studentRollNo.getText() + "'", null);
-            Cursor cu = dataBooze.rawQuery("SELECT * FROM users WHERE rollno='" + studentRollNo.getText() + "'", null);
+            Cursor c = dataBooze.rawQuery("SELECT * FROM student WHERE roll_no='" + studentRollNo.getText() + "'", null);
+            Cursor cu = dataBooze.rawQuery("SELECT * FROM users WHERE user_id='" + studentRollNo.getText() + "'", null);
             if (c.moveToFirst()) {
                 // Modifying record if found 
                 dataBooze.execSQL("UPDATE student SET name='" +
@@ -112,18 +114,18 @@ public class second extends AppCompatActivity
                         studentSection.getText() + "',department='" +
                                 studentDept.getText() + "',semester='" +
                                 studentSemester.getText() +
-                        "' WHERE rollno='" + studentRollNo.getText() + "'");
+                        "' WHERE roll_no='" + studentRollNo.getText() + "'");
                 //showMessage("Success", "Record Modified");
             }
             if (cu.moveToFirst()) {
                 // Modifying record if found 
-                dataBooze.execSQL("UPDATE student SET password='" +
+                dataBooze.execSQL("UPDATE users SET password='" +
                         studentPassword.getText()  +
-                        "' WHERE rollno='" + studentRollNo.getText() + "'");
+                        "' WHERE user_id='" + studentRollNo.getText() + "'");
                 showMessage("Success", "Record Modified");
             }
             else {
-                showMessage("Error", "Invalid Rollno");
+                showMessage("Error", "Invalid Roll Number");
             }
             clearText();
         }
@@ -131,13 +133,13 @@ public class second extends AppCompatActivity
         if (view == studentShow) {
             // Checking empty roll number 
             if (studentRollNo.getText().toString().trim().length() == 0) {
-                showMessage("Error", "Please enter Rollno");
+                showMessage("Error", "Please enter Roll Number");
                 return;
             }
             // Searching roll number 
             Cursor c = dataBooze.rawQuery
                     ("SELECT * FROM student" +
-                            " WHERE rollno='" +
+                            " WHERE roll_no='" +
                             studentRollNo.getText()
                             + "'", null);
 
@@ -149,7 +151,7 @@ public class second extends AppCompatActivity
                 studentSemester.setText(c.getString(4));
 
             } else {
-                showMessage("Error", "Invalid Rollno");
+                showMessage("Error", "Invalid Roll Number");
                 clearText();
             }
         }
@@ -169,9 +171,11 @@ public class second extends AppCompatActivity
                     new StringBuffer();
             while (c.moveToNext())
             {
-                buffer.append("Rollno: " + c.getString(0) + "\n");
+                buffer.append("Roll Number: " + c.getString(0) + "\n");
                 buffer.append("Name: " + c.getString(1) + "\n");
-                buffer.append("Marks: " + c.getString(2) + "\n\n");
+                buffer.append("Section " + c.getString(2) + "\n");
+                buffer.append("Department: " + c.getString(3) + "\n");
+                buffer.append("Semester: " + c.getString(4) + "\n\n");
             }
             // Displaying all records 
             showMessage("Student Details", buffer.toString());
@@ -192,6 +196,7 @@ public class second extends AppCompatActivity
         studentSection.setText("");
         studentDept.setText("");
         studentSemester.setText("");
+        studentPassword.setText("");
         studentRollNo.requestFocus();
     }
 }
