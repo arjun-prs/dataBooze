@@ -41,8 +41,8 @@ public class second extends AppCompatActivity
         studentShowAll.setOnClickListener(this);
         // Creating database and table  
         dataBooze = openOrCreateDatabase("dataBooze", Context.MODE_PRIVATE, null);
-        dataBooze.execSQL("drop table users");
-        dataBooze.execSQL("drop table student");
+        //dataBooze.execSQL("drop table users");
+        //dataBooze.execSQL("drop table student");
         dataBooze.execSQL("create table if not exists users(user_id varchar(18) primary key, password varchar(18));");
         dataBooze.execSQL("create table if not exists student(roll_no varchar(18) primary key, name varchar(18), section varchar(8), dept varchar(18), semester varchar(8), foreign key(roll_no) references users(user_id), foreign key(section) references classes(section));");
     }

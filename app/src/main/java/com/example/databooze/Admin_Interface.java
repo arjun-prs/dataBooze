@@ -55,13 +55,18 @@ public class Admin_Interface extends AppCompatActivity implements View.OnClickLi
         }
         if(v.getId()==R.id.edButProceedClassroom)
         {
-            Intent sixth = new Intent(this, sixth.class);
-            startActivity(sixth);
+            Intent eighth = new Intent(this, eighth.class);
+            startActivity(eighth);
+        }
+        if(v.getId()==R.id.edButProceedCourse)
+        {
+            Intent seventh = new Intent(this,seventh.class);
+            startActivity(seventh);
         }
         if(v.getId()==R.id.edButProceedAllotment)
         {
-            Intent seventh = new Intent(this, seventh.class);
-            startActivity(seventh);
+            Intent sixth = new Intent(this, sixth.class);
+            startActivity(sixth);
         }
     }
 }

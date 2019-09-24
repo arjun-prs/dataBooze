@@ -16,13 +16,13 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edETNumberOfBoys"
+        android:id="@+id/edETClassNumberOfBoys"
         android:hint="Enter Number of Boys"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edETNumberOfGirls"
+        android:id="@+id/edETClassNumberOfGirls"
         android:hint="Enter Number of Girls"/>
 
     <EditText
@@ -30,6 +30,29 @@
         android:layout_height="wrap_content"
         android:id="@+id/edETClassFacultyID"
         android:hint="Enter Faculty ID"/>
-
-
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edButClassAdd"
+        android:text="ADD"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edButClassDelete"
+        android:text="DELETE"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edButClassModify"
+        android:text="MODIFY"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edButClassShow"
+        android:text="SHOW"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edButClassShowAll"
+        android:text="SHOW ALL"/>
 </LinearLayout>

@@ -4,53 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".seventh"
+    tools:context=".eighth"
     android:orientation="vertical">
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edETCourseID"
-        android:hint="Enter Course ID"/>
+        android:id="@+id/edETClassRoomNo"
+        android:hint="Enter Room Number"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edETCourseName"
-        android:hint="Enter Course Name"/>
+        android:id="@+id/edETClassRoomBlock"
+        android:hint="Enter Block"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edETCourseCredits"
-        android:hint="Enter Course Credits"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/edETCourseSemester"
-        android:hint="Enter Course Semester"/>
+        android:id="@+id/edETClassRoomCapacity"
+        android:hint="Enter Room Capacity"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edButCourseAdd"
+        android:id="@+id/edButClassRoomAdd"
         android:text="ADD"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edButCourseDelete"
+        android:id="@+id/edButClassRoomDelete"
         android:text="DELETE"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edButCourseModify"
+        android:id="@+id/edButClassRoomModify"
         android:text="MODIFY"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edButCourseShow"
+        android:id="@+id/edButClassRoomShow"
         android:text="SHOW"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edButCourseShowAll"
+        android:id="@+id/edButClassRoomShowAll"
         android:text="SHOW ALL"/>
 
 </LinearLayout>

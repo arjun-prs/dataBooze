@@ -32,11 +32,6 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edETFacultySection"
-        android:hint="Enter Section..."/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/edETFacultyCourseID"
         android:hint="Enter Course ID..."/>
 

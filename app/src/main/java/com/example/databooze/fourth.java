@@ -28,8 +28,8 @@ public class fourth extends AppCompatActivity implements View.OnClickListener {
         adminDelete.setOnClickListener(this);
         adminShowAll.setOnClickListener(this);
         dataBooze = openOrCreateDatabase("dataBooze", Context.MODE_PRIVATE, null);
-        dataBooze.execSQL("drop table admins");
-        dataBooze.execSQL("drop table users");
+        //dataBooze.execSQL("drop table admins");
+        //dataBooze.execSQL("drop table users");
         dataBooze.execSQL("create table if not exists users(user_id varchar(18) primary key, password varchar(18));");
         dataBooze.execSQL("create table if not exists admins(admin_id varchar(18) primary key, foreign key(admin_id) references users(user_id));");
 
@@ -37,20 +37,17 @@ public class fourth extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        if(v == adminAdd)
-        {
-            if(adminID.getText().toString().trim().length()==0)
-            {
+        if(v == adminAdd) {
+            if (adminID.getText().toString().trim().length() == 0) {
                 showMessage("Error", "Please enter all values");
                 return;
-            }
-            else
-            {
-                dataBooze.execSQL("insert into users values ('" + adminID.getText() +"','" + adminPassWord.getText() + "');");
-                dataBooze.execSQL("insert into admins values ('" + adminID.getText() +"');");
+            } else {
+                dataBooze.execSQL("insert into users values ('" + adminID.getText() + "','" + adminPassWord.getText() + "');");
+                dataBooze.execSQL("insert into admins values ('" + adminID.getText() + "');");
                 showMessage("Success", "Record added");
                 clearText();
             }
+        }
             if(v == adminDelete)
             {
                 if(adminID.getText().toString().trim().length()==0)
@@ -77,7 +74,7 @@ public class fourth extends AppCompatActivity implements View.OnClickListener {
                                 adminID.getText() + "'");
                     }
                     else {
-                        showMessage("Error", "Invalid Rollno");
+                        showMessage("Error", "Invalid Admin ID");
                     }
                     clearText();
                 }
@@ -104,7 +101,7 @@ public class fourth extends AppCompatActivity implements View.OnClickListener {
             // Displaying info 
             }
 
-        }
+
 
     }
     public void showMessage(String title, String message){

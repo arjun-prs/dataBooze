@@ -12,7 +12,7 @@ import android.widget.EditText;
 
 public class third extends AppCompatActivity implements View.OnClickListener {
 
-    EditText facultyID, facultyName, facultyDept, facultyPosition, facultyPassword, facultySection, facultyCourseID;
+    EditText facultyID, facultyName, facultyDept, facultyPosition, facultyPassword, facultyCourseID;
     Button facultyAdd, facultyDelete, facultyModify, facultyShow, facultyShowAll;
     SQLiteDatabase dataBooze;
 
@@ -24,7 +24,6 @@ public class third extends AppCompatActivity implements View.OnClickListener {
         facultyName=findViewById(R.id.edETFacultyName);
         facultyDept=findViewById(R.id.edETFacultyDept);
         facultyPosition=findViewById(R.id.edETFacultyPosition);
-        facultySection=findViewById(R.id.edETFacultySection);
         facultyCourseID=findViewById(R.id.edETFacultyCourseID);
         facultyPassword=findViewById(R.id.edETFacultyPassword);
         facultyAdd=findViewById(R.id.edButFacultyAdd);
@@ -38,10 +37,10 @@ public class third extends AppCompatActivity implements View.OnClickListener {
         facultyShow.setOnClickListener(this);
         facultyShowAll.setOnClickListener(this);
         dataBooze=openOrCreateDatabase("dataBooze", Context.MODE_PRIVATE, null);
-        dataBooze.execSQL("drop table users");
-        dataBooze.execSQL("drop table faculty");
+        //dataBooze.execSQL("drop table users");
+        //dataBooze.execSQL("drop table faculty");
         dataBooze.execSQL("create table if not exists users(user_id varchar(18) primary key, password varchar(18));");
-        dataBooze.execSQL("create table if not exists faculty(faculty_id varchar(18) primary key, name varchar(18), position varchar(18), dept varchar(18), section varchar(8), course_id varchar(8), foreign key(faculty_id) references users(user_id), foreign key(section) references class(section), foreign key(course_id) references course(course_id))");
+        dataBooze.execSQL("create table if not exists faculty(faculty_id varchar(18) primary key, name varchar(18), position varchar(18), dept varchar(18), course_id varchar(8), foreign key(faculty_id) references users(user_id), foreign key(faculty_id) references class(faculty_id), foreign key(course_id) references course(course_id))");
 
     }
     @Override
@@ -49,12 +48,12 @@ public class third extends AppCompatActivity implements View.OnClickListener {
     {
         if(view == facultyAdd)
         {
-            if(facultyID.getText().toString().trim().length()==0||facultyName.getText().toString().trim().length()==0||facultyPosition.getText().toString().trim().length()==0||facultyDept.getText().toString().trim().length()==0||facultySection.getText().toString().trim().length()==0||facultyCourseID.getText().toString().trim().length()==0||facultyPassword.getText().toString().trim().length()==0)
+            if(facultyID.getText().toString().trim().length()==0||facultyName.getText().toString().trim().length()==0||facultyPosition.getText().toString().trim().length()==0||facultyDept.getText().toString().trim().length()==0||facultyCourseID.getText().toString().trim().length()==0||facultyPassword.getText().toString().trim().length()==0)
             {
                 showMessage("Error", "Please enter all values");
                 return;
             }
-            dataBooze.execSQL("INSERT INTO faculty VALUES('" + facultyID.getText() + "','" + facultyName.getText() + "','" + facultyPosition.getText() + "','" + facultyDept.getText() + "','" + facultySection.getText() + "','" + facultyCourseID.getText() + "');");
+            dataBooze.execSQL("INSERT INTO faculty VALUES('" + facultyID.getText() + "','" + facultyName.getText() + "','" + facultyPosition.getText() + "','" + facultyDept.getText() + "','" + facultyCourseID.getText() + "');");
             dataBooze.execSQL("INSERT INTO users VALUES('" + facultyID.getText() + "','" + facultyPassword.getText() + "');");
             showMessage("Success", "Record added");
             clearText();
@@ -83,14 +82,14 @@ public class third extends AppCompatActivity implements View.OnClickListener {
                         facultyID.getText() + "'");
             }
             else {
-                showMessage("Error", "Invalid Rollno");
+                showMessage("Error", "Invalid Faculty ID");
             }
             clearText();
         }
         if(view == facultyModify)
         {
             if (facultyID.getText().toString().trim().length() == 0) {
-                showMessage("Error", "Please enter Roll Number");
+                showMessage("Error", "Please enter Faculty ID");
                 return;
             }
             Cursor c = dataBooze.rawQuery("SELECT *" +
@@ -102,8 +101,7 @@ public class third extends AppCompatActivity implements View.OnClickListener {
                 dataBooze.execSQL("UPDATE faculty SET name='" +
                         facultyName.getText() + "',position='" +
                         facultyPosition.getText() + "',department='" +
-                        facultyDept.getText() + "',section='" +
-                        facultySection.getText() + "',course_id='" +
+                        facultyDept.getText() + "',course_id='" +
                                 facultyCourseID.getText() +
                         "' WHERE roll_no='" + facultyID.getText() + "'");
                 //showMessage("Success", "Record Modified");
@@ -116,14 +114,14 @@ public class third extends AppCompatActivity implements View.OnClickListener {
                 showMessage("Success", "Record Modified");
             }
             else {
-                showMessage("Error", "Invalid Roll Number");
+                showMessage("Error", "Invalid Faculty ID");
             }
             clearText();
         }
         if(view == facultyShow)
         {
             if (facultyID.getText().toString().trim().length() == 0) {
-                showMessage("Error", "Please enter Roll Number");
+                showMessage("Error", "Please enter Faculty ID");
                 return;
             }
             Cursor c = dataBooze.rawQuery("SELECT *" +
@@ -132,12 +130,11 @@ public class third extends AppCompatActivity implements View.OnClickListener {
                 // Displaying record if found 
                 facultyName.setText(c.getString(1));
                 facultyPosition.setText(c.getString(2));
-                facultyDept.setText(c.getString(3));
-                facultySection.setText(c.getString(4));
-                facultyCourseID.setText(c.getString(5));
+                facultyDept.setText(c.getString(3));;
+                facultyCourseID.setText(c.getString(4));
             }
             else {
-                showMessage("Error", "Invalid Roll Number");
+                showMessage("Error", "Invalid Faculty ID");
                 clearText();
             }
         }
@@ -156,8 +153,7 @@ public class third extends AppCompatActivity implements View.OnClickListener {
                 buffer.append("Name: " + c.getString(1) + "\n");
                 buffer.append("Position " + c.getString(2) + "\n");
                 buffer.append("Department: " + c.getString(3) + "\n");
-                buffer.append("Section: " + c.getString(4) + "\n");
-                buffer.append("Course ID: " + c.getString(5) + "\n\n");
+                buffer.append("Course ID: " + c.getString(4) + "\n\n");
             }
             showMessage("Faculty Details", buffer.toString());
         }
@@ -176,7 +172,6 @@ public class third extends AppCompatActivity implements View.OnClickListener {
         facultyName.setText("");
         facultyDept.setText("");
         facultyPosition.setText("");
-        facultySection.setText("");
         facultyCourseID.setText("");
         facultyPassword.setText("");
     }
