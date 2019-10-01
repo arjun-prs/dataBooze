@@ -45,6 +45,7 @@ public class userInterface extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         Intent generate = new Intent(this, studentGenerate.class);
+        generate.putExtra("section",studentSection.getText().toString());
         startActivity(generate);
     }
 }

@@ -173,7 +173,7 @@ public class second extends AppCompatActivity
             {
                 buffer.append("Roll Number: " + c.getString(0) + "\n");
                 buffer.append("Name: " + c.getString(1) + "\n");
-                buffer.append("Section " + c.getString(2) + "\n");
+                buffer.append("Section: " + c.getString(2) + "\n");
                 buffer.append("Department: " + c.getString(3) + "\n");
                 buffer.append("Semester: " + c.getString(4) + "\n\n");
             }

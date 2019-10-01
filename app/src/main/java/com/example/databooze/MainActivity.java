@@ -32,7 +32,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    public void onClick(View v) {
+    public void onClick(View v)
+    {
+        int i=0;
         String uName = userName.getText().toString();
         String pass = passWord.getText().toString();
         Cursor c = dataBooze.rawQuery
@@ -57,14 +59,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         {
             while (c.moveToNext())
             {
-                int i=0;
+                i=0;
                 if(c.getString(1).equals(pass.toString()))
                 {
-                    i++;
                     while((c1.moveToNext()))
                     {
                         if ((c1.getString(0).equals(uName.toString())))
                         {
+                            i++;
                             Intent adminInterface = new Intent(this, Admin_Interface.class); //only for admins...
                             adminInterface.putExtra("uName", uName);
                             startActivity(adminInterface);
@@ -75,6 +77,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     {
                         if (c2.getString(0).equals(uName.toString()))
                         {
+                            i++;
                             Intent facultyInterface = new Intent(this, facultyInterface.class);
                             facultyInterface.putExtra("uName", uName);
                             startActivity(facultyInterface);
@@ -85,6 +88,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     {
                         if (c3.getString(0).equals(uName.toString()))
                         {
+                            i++;
                             Intent userInterface = new Intent(this, userInterface.class);
                             userInterface.putExtra("uName", uName);
                             startActivity(userInterface);
@@ -94,20 +98,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 if(i==0)
                 {
-                    //showMessage("Error", "Enter Correct Credentials" + String.valueOf(i));
+                    showMessage("Error", "Enter Correct Credentials");
+                }
+                else
+                {
+                    break;
                 }
             }
         }
     }
-    public void showMessage(String title, String message){
+    public void showMessage(String title, String message)
+    {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(true);
         builder.setTitle(title);
         builder.setMessage(message);
         builder.show();
     }
-    public void clearText(){
-
+    public void clearText()
+    {
         userName.setText("");
         passWord.setText("");
         userName.requestFocus();
