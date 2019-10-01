@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".eighth"></activity>
+        <activity android:name=".studentGenerate"></activity>
+        <activity android:name=".facultyGenerate" />
+        <activity android:name=".facultyInterface" />
+        <activity android:name=".userInterface" />
+        <activity android:name=".eighth" />
         <activity android:name=".seventh" />
         <activity android:name=".sixth" />
         <activity android:name=".fifth" />

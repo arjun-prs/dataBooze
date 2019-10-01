@@ -64,7 +64,7 @@ public class fourth extends AppCompatActivity implements View.OnClickListener {
                     if (c.moveToFirst()) {
                         // Deleting record if found 
                         //showMessage("Success", "Record Deleted");
-                        dataBooze.execSQL("DELETE FROM admins WHERE roll_no='" +
+                        dataBooze.execSQL("DELETE FROM admins WHERE admin_id='" +
                                 adminID.getText() + "'");
                     }
                     if (cu.moveToFirst()) {

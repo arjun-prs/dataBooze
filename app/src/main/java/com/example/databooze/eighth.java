@@ -56,7 +56,7 @@ public class eighth extends AppCompatActivity implements View.OnClickListener {
         {
             if(roomNumber.getText().toString().trim().length()==0)
             {
-                showMessage("Error", "Please enter faculty ID");
+                showMessage("Error", "Please enter Room Number");
                 return;
             }
             Cursor c = dataBooze.rawQuery("SELECT *" +
@@ -68,7 +68,7 @@ public class eighth extends AppCompatActivity implements View.OnClickListener {
                         roomNumber.getText() + "'");
             }
             else {
-                showMessage("Error", "Invalid Faculty ID");
+                showMessage("Error", "Invalid Room Number");
             }
             clearText();
         }
@@ -91,7 +91,7 @@ public class eighth extends AppCompatActivity implements View.OnClickListener {
                 //showMessage("Success", "Record Modified");
             }
             else {
-                showMessage("Error", "Invalid Faculty ID");
+                showMessage("Error", "Invalid Room Number");
             }
             clearText();
         }
@@ -110,7 +110,7 @@ public class eighth extends AppCompatActivity implements View.OnClickListener {
                 capacity.setText(c.getString(2));
             }
             else {
-                showMessage("Error", "Invalid Faculty ID");
+                showMessage("Error", "Invalid Room Number");
                 clearText();
             }
 
@@ -130,7 +130,7 @@ public class eighth extends AppCompatActivity implements View.OnClickListener {
                 buffer.append("Block: " + c.getString(1) + "\n");
                 buffer.append("Capacity " + c.getString(2) + "\n\n");
             }
-            showMessage("Faculty Details", buffer.toString());
+            showMessage("Class Room Details: ", buffer.toString());
         }
     }
     public void showMessage(String title, String message){

@@ -71,7 +71,7 @@ public class seventh extends AppCompatActivity implements View.OnClickListener {
             }
 
             else {
-                showMessage("Error", "Invalid COurse ID");
+                showMessage("Error", "Invalid Course ID");
             }
             clearText();
         }
@@ -90,7 +90,7 @@ public class seventh extends AppCompatActivity implements View.OnClickListener {
                         "' WHERE section='" + courseID.getText() + "'");
             }
             else {
-            showMessage("Error", "Invalid Section");
+            showMessage("Error", "Invalid Course ID");
             }
             clearText();
         }
@@ -109,7 +109,7 @@ public class seventh extends AppCompatActivity implements View.OnClickListener {
                 courseSemester.setText(c.getString(3));
             }
             else {
-                showMessage("Error", "Invalid Section");
+                showMessage("Error", "Invalid Course ID");
                 clearText();
             }
         }
@@ -134,7 +134,7 @@ public class seventh extends AppCompatActivity implements View.OnClickListener {
                 buffer.append("Course Semester: " + c.getString(3) + "\n\n");
             }
             // Displaying all records 
-            showMessage("Class Details", buffer.toString());
+            showMessage("Course Details", buffer.toString());
         }
     }
     public void showMessage(String title, String message){

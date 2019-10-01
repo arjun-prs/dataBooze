@@ -1,18 +1,25 @@
 package com.example.databooze;
 
+import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Admin_Interface extends AppCompatActivity implements View.OnClickListener {
     Button student, faculty, admin, classes, classroom, course, allotment;
+    TextView adminTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Bundle b = getIntent().getExtras();
+        String adminName = b.getString("uName");
         setContentView(R.layout.activity_admin__interface);
         student=findViewById(R.id.edButProceedStudent);
         faculty=findViewById(R.id.edButProceedFaculty);
@@ -21,6 +28,7 @@ public class Admin_Interface extends AppCompatActivity implements View.OnClickLi
         classroom=findViewById(R.id.edButProceedClassroom);
         course=findViewById(R.id.edButProceedCourse);
         allotment=findViewById(R.id.edButProceedAllotment);
+        adminTV=findViewById(R.id.edTVadminWelcome);
         student.setOnClickListener(this);
         faculty.setOnClickListener(this);
         admin.setOnClickListener(this);
@@ -28,6 +36,7 @@ public class Admin_Interface extends AppCompatActivity implements View.OnClickLi
         classroom.setOnClickListener(this);
         course.setOnClickListener(this);
         allotment.setOnClickListener(this);
+        adminTV.setText(adminName);
     }
 
     @Override
