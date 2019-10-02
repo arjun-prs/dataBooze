@@ -10,8 +10,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener
+{
     EditText userName, passWord;
     Button proceed;
     SQLiteDatabase dataBooze;
@@ -29,6 +31,166 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         dataBooze.execSQL("create table if not exists student(roll_no varchar(18) primary key, name varchar(18), section varchar(8), dept varchar(18), semester varchar(8), foreign key(roll_no) references users(user_id), foreign key(section) references classes(section));");
         dataBooze.execSQL("create table if not exists faculty(faculty_id varchar(18) primary key, name varchar(18), position varchar(18), dept varchar(18), course_id varchar(8), foreign key(faculty_id) references users(user_id), foreign key(faculty_id) references class(faculty_id), foreign key(course_id) references course(course_id))");
         dataBooze.execSQL("create table if not exists admins(admin_id varchar(18) primary key, foreign key(admin_id) references users(user_id));");
+
+        /*dataBooze.execSQL("drop table seca");
+        dataBooze.execSQL("drop table secb");
+        dataBooze.execSQL("drop table secc");
+        dataBooze.execSQL("drop table secd");
+        Toast.makeText(this,"Tables Dropped",Toast.LENGTH_SHORT).show();
+
+        dataBooze.execSQL("create table if not exists seca(day varchar(8), slot varchar(8), course varchar(18))");
+        dataBooze.execSQL("create table if not exists secb(day varchar(8), slot varchar(8), course varchar(18))");
+        dataBooze.execSQL("create table if not exists secc(day varchar(8), slot varchar(8), course varchar(18))");
+        dataBooze.execSQL("create table if not exists secd(day varchar(8), slot varchar(8), course varchar(18))");
+        Toast.makeText(this,"Tables Created",Toast.LENGTH_SHORT).show();
+
+        dataBooze.execSQL("insert into seca values('1','1','15CSE301')");
+        dataBooze.execSQL("insert into seca values('1','2','15CSE303')");
+        dataBooze.execSQL("insert into seca values('1','3','15MAT301')");
+        dataBooze.execSQL("insert into seca values('1','4','15CSE375')");
+        dataBooze.execSQL("insert into seca values('1','5','15CSE302')");
+        dataBooze.execSQL("insert into seca values('1','6','FREE')");
+
+        dataBooze.execSQL("insert into seca values('2','1','15CSE303')");
+        dataBooze.execSQL("insert into seca values('2','2','15CSE301')");
+        dataBooze.execSQL("insert into seca values('2','3','15CSE375')");
+        dataBooze.execSQL("insert into seca values('2','4','15MAT301')");
+        dataBooze.execSQL("insert into seca values('2','5','15CSE302')");
+        dataBooze.execSQL("insert into seca values('2','6','FREE')");
+
+        dataBooze.execSQL("insert into seca values('3','1','FREE')");
+        dataBooze.execSQL("insert into seca values('3','2','15CSE375')");
+        dataBooze.execSQL("insert into seca values('3','3','15CSE301')");
+        dataBooze.execSQL("insert into seca values('3','4','15CSE302')");
+        dataBooze.execSQL("insert into seca values('3','5','15MAT301')");
+        dataBooze.execSQL("insert into seca values('3','6','15CSE303')");
+
+        dataBooze.execSQL("insert into seca values('4','1','FREE')");
+        dataBooze.execSQL("insert into seca values('4','2','15CSE302')");
+        dataBooze.execSQL("insert into seca values('4','3','15MAT301')");
+        dataBooze.execSQL("insert into seca values('4','4','15CSE375')");
+        dataBooze.execSQL("insert into seca values('4','5','15CSE303')");
+        dataBooze.execSQL("insert into seca values('4','6','15CSE301')");
+
+        dataBooze.execSQL("insert into seca values('5','1','15MAT301')");
+        dataBooze.execSQL("insert into seca values('5','2','15CSE301')");
+        dataBooze.execSQL("insert into seca values('5','3','15CSE303')");
+        dataBooze.execSQL("insert into seca values('5','4','FREE')");
+        dataBooze.execSQL("insert into seca values('5','5','FREE')");
+        dataBooze.execSQL("insert into seca values('5','6','FREE')");
+
+        Toast.makeText(this,"A done",Toast.LENGTH_SHORT).show();
+
+        dataBooze.execSQL("insert into secb values('1','1','15MAT301')");
+        dataBooze.execSQL("insert into secb values('1','2','15CSE302')");
+        dataBooze.execSQL("insert into secb values('1','3','15CSE301')");
+        dataBooze.execSQL("insert into secb values('1','4','15CSE303')");
+        dataBooze.execSQL("insert into secb values('1','5','15CSE363')");
+        dataBooze.execSQL("insert into secb values('1','6','FREE')");
+
+        dataBooze.execSQL("insert into secb values('2','1','FREE')");
+        dataBooze.execSQL("insert into secb values('2','2','15CSE302')");
+        dataBooze.execSQL("insert into secb values('2','3','15CSE363')");
+        dataBooze.execSQL("insert into secb values('2','4','15CSE301')");
+        dataBooze.execSQL("insert into secb values('2','5','15CSE303')");
+        dataBooze.execSQL("insert into secb values('2','6','15MAT301')");
+
+        dataBooze.execSQL("insert into secb values('3','1','15CSE302')");
+        dataBooze.execSQL("insert into secb values('3','2','FREE')");
+        dataBooze.execSQL("insert into secb values('3','3','15MAT301')");
+        dataBooze.execSQL("insert into secb values('3','4','15CSE303')");
+        dataBooze.execSQL("insert into secb values('3','5','15CSE301')");
+        dataBooze.execSQL("insert into secb values('3','6','15CSE363')");
+
+        dataBooze.execSQL("insert into secb values('4','1','FREE')");
+        dataBooze.execSQL("insert into secb values('4','2','FREE')");
+        dataBooze.execSQL("insert into secb values('4','3','15CSE303')");
+        dataBooze.execSQL("insert into secb values('4','4','15CSE301')");
+        dataBooze.execSQL("insert into secb values('4','5','15MAT301')");
+        dataBooze.execSQL("insert into secb values('4','6','FREE')");
+
+        dataBooze.execSQL("insert into secb values('5','1','15CSE363')");
+        dataBooze.execSQL("insert into secb values('5','2','15CSE302')");
+        dataBooze.execSQL("insert into secb values('5','3','15MAT301')");
+        dataBooze.execSQL("insert into secb values('5','4','15CSE301')");
+        dataBooze.execSQL("insert into secb values('5','5','15CSE303')");
+        dataBooze.execSQL("insert into secb values('5','6','FREE')");
+
+        Toast.makeText(this,"B done",Toast.LENGTH_SHORT).show();
+
+        dataBooze.execSQL("insert into secc values('1','1','FREE')");
+        dataBooze.execSQL("insert into secc values('1','2','15CSE302')");
+        dataBooze.execSQL("insert into secc values('1','3','15CSE303')");
+        dataBooze.execSQL("insert into secc values('1','4','15MAT301')");
+        dataBooze.execSQL("insert into secc values('1','5','15CSE301')");
+        dataBooze.execSQL("insert into secc values('1','6','15CSE337')");
+
+        dataBooze.execSQL("insert into secc values('2','1','FREE')");
+        dataBooze.execSQL("insert into secc values('2','2','15CSE303')");
+        dataBooze.execSQL("insert into secc values('2','3','15CSE337')");
+        dataBooze.execSQL("insert into secc values('2','4','15MAT301')");
+        dataBooze.execSQL("insert into secc values('2','5','15CSE301')");
+        dataBooze.execSQL("insert into secc values('2','6','FREE')");
+
+        dataBooze.execSQL("insert into secc values('3','1','15MAT301')");
+        dataBooze.execSQL("insert into secc values('3','2','15CSE303')");
+        dataBooze.execSQL("insert into secc values('3','3','FREE')");
+        dataBooze.execSQL("insert into secc values('3','4','15CSE302')");
+        dataBooze.execSQL("insert into secc values('3','5','15CSE337')");
+        dataBooze.execSQL("insert into secc values('3','6','15CSE301')");
+
+        dataBooze.execSQL("insert into secc values('4','1','15CSE301')");
+        dataBooze.execSQL("insert into secc values('4','2','15CSE302')");
+        dataBooze.execSQL("insert into secc values('4','3','15CSE303')");
+        dataBooze.execSQL("insert into secc values('4','4','FREE')");
+        dataBooze.execSQL("insert into secc values('4','5','15MAT301')");
+        dataBooze.execSQL("insert into secc values('4','6','15CSE337')");
+
+        dataBooze.execSQL("insert into secc values('5','1','15CSE303')");
+        dataBooze.execSQL("insert into secc values('5','2','15MAT301')");
+        dataBooze.execSQL("insert into secc values('5','3','15CSE302')");
+        dataBooze.execSQL("insert into secc values('5','4','15CSE301')");
+        dataBooze.execSQL("insert into secc values('5','5','FREE')");
+        dataBooze.execSQL("insert into secc values('5','6','FREE')");
+
+        Toast.makeText(this,"C done",Toast.LENGTH_SHORT).show();
+
+        dataBooze.execSQL("insert into secd values('1','1','15MAT301')");
+        dataBooze.execSQL("insert into secd values('1','2','15CSE378')");
+        dataBooze.execSQL("insert into secd values('1','3','15CSE301')");
+        dataBooze.execSQL("insert into secd values('1','4','15CSE302')");
+        dataBooze.execSQL("insert into secd values('1','5','15CSE303')");
+        dataBooze.execSQL("insert into secd values('1','6','FREE')");
+
+        dataBooze.execSQL("insert into secd values('2','1','15CSE378')");
+        dataBooze.execSQL("insert into secd values('2','2','15CSE301')");
+        dataBooze.execSQL("insert into secd values('2','3','FREE')");
+        dataBooze.execSQL("insert into secd values('2','4','FREE')");
+        dataBooze.execSQL("insert into secd values('2','5','15CSE303')");
+        dataBooze.execSQL("insert into secd values('2','6','15MAT301')");
+
+        dataBooze.execSQL("insert into secd values('3','1','15CSE301')");
+        dataBooze.execSQL("insert into secd values('3','2','15CSE302')");
+        dataBooze.execSQL("insert into secd values('3','3','FREE')");
+        dataBooze.execSQL("insert into secd values('3','4','FREE')");
+        dataBooze.execSQL("insert into secd values('3','5','15CSE303')");
+        dataBooze.execSQL("insert into secd values('3','6','15MAT301')");
+
+        dataBooze.execSQL("insert into secd values('4','1','15CSE303')");
+        dataBooze.execSQL("insert into secd values('4','2','15CSE378')");
+        dataBooze.execSQL("insert into secd values('4','3','15MAT301')");
+        dataBooze.execSQL("insert into secd values('4','4','15CSE301')");
+        dataBooze.execSQL("insert into secd values('4','5','15CSE302')");
+        dataBooze.execSQL("insert into secd values('4','6','FREE')");
+
+        dataBooze.execSQL("insert into secd values('5','1','15CSE302')");
+        dataBooze.execSQL("insert into secd values('5','2','15CSE301')");
+        dataBooze.execSQL("insert into secd values('5','3','15CSE378')");
+        dataBooze.execSQL("insert into secd values('5','4','15CSE303')");
+        dataBooze.execSQL("insert into secd values('5','5','15MAT301')");
+        dataBooze.execSQL("insert into secd values('5','6','FREE')");
+
+        Toast.makeText(this,"D done",Toast.LENGTH_SHORT).show();*/
     }
 
     @Override

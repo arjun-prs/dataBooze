@@ -1,5 +1,7 @@
 package com.example.databooze;
 
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -11,11 +13,13 @@ public class studentGenerate extends AppCompatActivity
                 t31,t32,t33,t34,t35,t36,
                 t41,t42,t43,t44,t45,t46,
                 t51,t52,t53,t54,t55,t56;
+    //SQLiteDatabase dataBooze;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_generate);
+        //dataBooze = openOrCreateDatabase("dataBooze", Context.MODE_PRIVATE, null);
         t11 = findViewById(R.id.t11);
         t12 = findViewById(R.id.t12);
         t13 = findViewById(R.id.t13);
@@ -162,5 +166,6 @@ public class studentGenerate extends AppCompatActivity
             t55.setText("Linear Algebra\nDr. J. Geetha\nA304");
             t56.setText("FREE");
         }
+
     }
 }

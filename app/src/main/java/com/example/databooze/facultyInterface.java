@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class facultyInterface extends AppCompatActivity implements View.OnClickListener {
     SQLiteDatabase dataBooze;
@@ -46,6 +47,9 @@ public class facultyInterface extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View v) {
         Intent generate = new Intent(this, facultyGenerate.class);
+        generate.putExtra("courseID",facultyCourseID.getText().toString());
+        generate.putExtra("facultyID",facultyIDTV.getText().toString());
+        generate.putExtra("dept",facultyDept.getText().toString());
         startActivity(generate);
     }
 }

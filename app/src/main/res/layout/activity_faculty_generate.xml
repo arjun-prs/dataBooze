@@ -6,4 +6,421 @@
     android:layout_height="match_parent"
     tools:context=".facultyGenerate">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="Day/Period" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="1" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="2" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="3" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="4" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="5" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="6" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="Monday" />
+
+                    <TextView
+                        android:id="@+id/t11"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="FREE" />
+
+                    <TextView
+                        android:id="@+id/t12"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="FREE" />
+
+                    <TextView
+                        android:id="@+id/t13"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="FREE" />
+
+                    <TextView
+                        android:id="@+id/t14"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="FREE" />
+
+                    <TextView
+                        android:id="@+id/t15"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="FREE" />
+
+                    <TextView
+                        android:id="@+id/t16"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="FREE" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="Tuesday" />
+
+                    <TextView
+                        android:id="@+id/t21"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="FREE" />
+
+                    <TextView
+                        android:id="@+id/t22"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="FREE" />
+
+                    <TextView
+                        android:id="@+id/t23"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="FREE" />
+
+                    <TextView
+                        android:id="@+id/t24"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="FREE" />
+
+                    <TextView
+                        android:id="@+id/t25"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="FREE" />
+
+                    <TextView
+                        android:id="@+id/t26"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="FREE" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="Wednesday" />
+
+                    <TextView
+                        android:id="@+id/t31"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="FREE" />
+
+                    <TextView
+                        android:id="@+id/t32"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="FREE" />
+
+                    <TextView
+                        android:id="@+id/t33"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="FREE" />
+
+                    <TextView
+                        android:id="@+id/t34"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="FREE" />
+
+                    <TextView
+                        android:id="@+id/t35"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="FREE" />
+
+                    <TextView
+                        android:id="@+id/t36"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="FREE" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="Thursday" />
+
+                    <TextView
+                        android:id="@+id/t41"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="FREE" />
+
+                    <TextView
+                        android:id="@+id/t42"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="FREE" />
+
+                    <TextView
+                        android:id="@+id/t43"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="FREE" />
+
+                    <TextView
+                        android:id="@+id/t44"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="FREE" />
+
+                    <TextView
+                        android:id="@+id/t45"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="FREE" />
+
+                    <TextView
+                        android:id="@+id/t46"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="FREE" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="Friday" />
+
+                    <TextView
+                        android:id="@+id/t51"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="FREE" />
+
+                    <TextView
+                        android:id="@+id/t52"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="FREE" />
+
+                    <TextView
+                        android:id="@+id/t53"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="FREE" />
+
+                    <TextView
+                        android:id="@+id/t54"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="FREE" />
+
+                    <TextView
+                        android:id="@+id/t55"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="FREE" />
+
+                    <TextView
+                        android:id="@+id/t56"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+                        android:text="FREE" />
+                </TableRow>
+
+            </TableLayout>
+
+        </HorizontalScrollView>
+    </ScrollView>
+
 </android.support.constraint.ConstraintLayout>

@@ -40,11 +40,11 @@
         android:layout_height="wrap_content"
         android:id="@+id/edButProceedAdmin"
         android:text="Modify Admin Table"/>
-    <Button
+    <!--<Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/edButProceedClass"
-        android:text="Modify Class Table"/>
+        android:text="Modify Class Table"/>-->
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -55,11 +55,11 @@
         android:layout_height="wrap_content"
         android:id="@+id/edButProceedCourse"
         android:text="Modify Course Table"/>
-    <Button
+    <!--<Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/edButProceedAllotment"
-        android:text="Modify Allotment Table"/>
+        android:text="Modify Allotment Table"/>-->
 
 
 </LinearLayout>

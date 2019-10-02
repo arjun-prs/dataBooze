@@ -24,18 +24,18 @@ public class Admin_Interface extends AppCompatActivity implements View.OnClickLi
         student=findViewById(R.id.edButProceedStudent);
         faculty=findViewById(R.id.edButProceedFaculty);
         admin=findViewById(R.id.edButProceedAdmin);
-        classes=findViewById(R.id.edButProceedClass);
+        //classes=findViewById(R.id.edButProceedClass);
         classroom=findViewById(R.id.edButProceedClassroom);
         course=findViewById(R.id.edButProceedCourse);
-        allotment=findViewById(R.id.edButProceedAllotment);
+        //allotment=findViewById(R.id.edButProceedAllotment);
         adminTV=findViewById(R.id.edTVadminWelcome);
         student.setOnClickListener(this);
         faculty.setOnClickListener(this);
         admin.setOnClickListener(this);
-        classes.setOnClickListener(this);
+        //classes.setOnClickListener(this);
         classroom.setOnClickListener(this);
         course.setOnClickListener(this);
-        allotment.setOnClickListener(this);
+        //allotment.setOnClickListener(this);
         adminTV.setText(adminName);
     }
 
@@ -57,11 +57,11 @@ public class Admin_Interface extends AppCompatActivity implements View.OnClickLi
             Intent fourth = new Intent(this, fourth.class);
             startActivity(fourth);
         }
-        if(v.getId()==R.id.edButProceedClass)
+        /*if(v.getId()==R.id.edButProceedClass)
         {
             Intent fifth = new Intent(this, fifth.class);
             startActivity(fifth);
-        }
+        }*/
         if(v.getId()==R.id.edButProceedClassroom)
         {
             Intent eighth = new Intent(this, eighth.class);
@@ -72,10 +72,10 @@ public class Admin_Interface extends AppCompatActivity implements View.OnClickLi
             Intent seventh = new Intent(this,seventh.class);
             startActivity(seventh);
         }
-        if(v.getId()==R.id.edButProceedAllotment)
+        /*if(v.getId()==R.id.edButProceedAllotment)
         {
             Intent sixth = new Intent(this, sixth.class);
             startActivity(sixth);
-        }
+        }*/
     }
 }
