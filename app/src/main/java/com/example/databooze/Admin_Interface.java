@@ -27,7 +27,7 @@ public class Admin_Interface extends AppCompatActivity implements View.OnClickLi
         //classes=findViewById(R.id.edButProceedClass);
         classroom=findViewById(R.id.edButProceedClassroom);
         course=findViewById(R.id.edButProceedCourse);
-        //allotment=findViewById(R.id.edButProceedAllotment);
+        allotment=findViewById(R.id.edButProceedAllotment);
         adminTV=findViewById(R.id.edTVadminWelcome);
         student.setOnClickListener(this);
         faculty.setOnClickListener(this);
@@ -35,7 +35,7 @@ public class Admin_Interface extends AppCompatActivity implements View.OnClickLi
         //classes.setOnClickListener(this);
         classroom.setOnClickListener(this);
         course.setOnClickListener(this);
-        //allotment.setOnClickListener(this);
+        allotment.setOnClickListener(this);
         adminTV.setText(adminName);
     }
 
@@ -72,10 +72,10 @@ public class Admin_Interface extends AppCompatActivity implements View.OnClickLi
             Intent seventh = new Intent(this,seventh.class);
             startActivity(seventh);
         }
-        /*if(v.getId()==R.id.edButProceedAllotment)
+        if(v.getId()==R.id.edButProceedAllotment)
         {
             Intent sixth = new Intent(this, sixth.class);
             startActivity(sixth);
-        }*/
+        }
     }
 }

@@ -46,6 +46,7 @@ public class userInterface extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         Intent generate = new Intent(this, studentGenerate.class);
         generate.putExtra("section",studentSection.getText().toString());
+        generate.putExtra("editAccess","0");
         startActivity(generate);
     }
 }

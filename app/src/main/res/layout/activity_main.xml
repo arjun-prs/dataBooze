@@ -5,14 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:gravity="center">
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="DATABOOZE TIMETABLE MANAGEMENT SYSTEM"
+        android:text="DATABOOZE \nTIMETABLE MANAGEMENT SYSTEM"
+        android:fontFamily="casual"
+        android:textAlignment="center"
         android:layout_centerHorizontal="true"
         android:textSize="18dp"
         android:textColor="@color/colorAccent"/>

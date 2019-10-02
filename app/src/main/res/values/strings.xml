@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">dataBooze</string>
+    <string-array name="sections">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+    </string-array>
 </resources>
