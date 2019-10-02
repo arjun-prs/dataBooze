@@ -96,15 +96,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         }
                     }
                 }
-                if(i==0)
-                {
-                    showMessage("Error", "Enter Correct Credentials");
-                }
-                else
+                if(i!=0)
                 {
                     break;
                 }
             }
+        }
+        if(i==0)
+        {
+            showMessage("Error", "Enter Correct Credentials");
         }
     }
     public void showMessage(String title, String message)
