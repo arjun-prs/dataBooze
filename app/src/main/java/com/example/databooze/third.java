@@ -151,7 +151,7 @@ public class third extends AppCompatActivity implements View.OnClickListener {
             {
                 buffer.append("Faculty ID: " + c.getString(0) + "\n");
                 buffer.append("Name: " + c.getString(1) + "\n");
-                buffer.append("Position " + c.getString(2) + "\n");
+                buffer.append("Position: " + c.getString(2) + "\n");
                 buffer.append("Department: " + c.getString(3) + "\n");
                 buffer.append("Course ID: " + c.getString(4) + "\n\n");
             }

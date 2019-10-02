@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             while (c.moveToNext())
             {
                 i=0;
-                if(c.getString(1).equals(pass.toString()))
+                if(c.getString(1).equals(pass.toString())&&c.getString(0).equals(uName.toString()))
                 {
                     while((c1.moveToNext()))
                     {

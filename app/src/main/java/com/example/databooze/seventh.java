@@ -130,7 +130,7 @@ public class seventh extends AppCompatActivity implements View.OnClickListener {
             {
                 buffer.append("Course ID: " + c.getString(0) + "\n");
                 buffer.append("Course Name: " + c.getString(1) + "\n");
-                buffer.append("Course Credits " + c.getString(2) + "\n");
+                buffer.append("Course Credits: " + c.getString(2) + "\n");
                 buffer.append("Course Semester: " + c.getString(3) + "\n\n");
             }
             // Displaying all records 
