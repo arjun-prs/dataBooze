@@ -107,6 +107,7 @@ public class studentGenerate extends AppCompatActivity implements View.OnClickLi
                 public void onClick(DialogInterface dialogInterface, int i)
                 {
                     dialogInterface.cancel();
+                    Toast.makeText(getApplicationContext(),"Click on slot to change",Toast.LENGTH_SHORT).show();
                 }
             });
             dialog.show();
