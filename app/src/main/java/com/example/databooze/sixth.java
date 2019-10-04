@@ -28,7 +28,6 @@ public class sixth extends AppCompatActivity implements AdapterView.OnItemSelect
             @Override
             public void onClick(View view)
             {
-                Toast.makeText(getApplicationContext(),"Click on slot to change",Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(getApplicationContext(), studentGenerate.class);
                 i.putExtra("section",item.getText().toString());
                 i.putExtra("editAccess","1");

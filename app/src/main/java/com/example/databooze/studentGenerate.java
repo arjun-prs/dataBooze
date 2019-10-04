@@ -2,6 +2,7 @@ package com.example.databooze;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -113,119 +114,21 @@ public class studentGenerate extends AppCompatActivity implements View.OnClickLi
             dialog.show();
         }
 
-        if(section.equals("B"))
+        if(section.equals("A"))
         {
-            //Monday
-            t11.setText("Linear Algebra\nDr. J. Mahalakshmi\nA202");
-            t12.setText("Database \nManagement Systems\nDr. Priyanka Kumar\nA202");
-            t13.setText("Computer Organisation \nand Architecture\nDr. Harini N.\nA202");
-            t14.setText("Theory of \nComputation\nDr. Prakash P.\nA302");
-            t15.setText("Digital Image \nProcessing\nMs. Sikha O. K.\nA302");
-            t16.setText("FREE");
-            //Tuesday
-            t21.setText("FREE");
-            t22.setText("Database \nManagement Systems\nDr. Priyanka Kumar\nA202");
-            t23.setText("Digital Image \nProcessing\nMs. Sikha O. K.\nA202");
-            t24.setText("Computer Organisation \nand Architecture\nDr. Harini N.\nA302");
-            t25.setText("Theory of \nComputation\nDr. Prakash P.\nA302");
-            t26.setText("Linear Algebra\nDr. J. Mahalakshmi\nA302");
-            //Wednesday
-            t31.setText("Database \nManagement Systems\nDr. Priyanka Kumar\nA202");
-            t32.setText("FREE");
-            t33.setText("Linear Algebra\nDr. J. Mahalakshmi\nA202");
-            t34.setText("Theory of \nComputation\nDr. Prakash P.\nA302");
-            t35.setText("Computer Organisation \nand Architecture\nDr. Harini N.\nA302");
-            t36.setText("Digital Image \nProcessing\nMs. Sikha O. K.\nA302");
-            //Thursday
-            t41.setText("FREE");
-            t42.setText("FREE");
-            t43.setText("Theory of \nComputation\nDr. Prakash P.\nA202");
-            t44.setText("Computer Organisation \nand Architecture\nDr. Harini N.\nA302");
-            t45.setText("Linear Algebra\nDr. J. Mahalakshmi\nA302");
-            t46.setText("FREE");
-            //Friday
-            t51.setText("Digital Image \nProcessing\nMs. Sikha O. K.\nA202");
-            t52.setText("Database \nManagement Systems\nDr. Priyanka Kumar\nA202");
-            t53.setText("Linear Algebra\nDr. J. Mahalakshmi\nA202");
-            t54.setText("Computer Organisation \nand Architecture\nDr. Harini N.\nA302");
-            t55.setText("Theory of \nComputation\nDr. Prakash P.\nA302");
-            t56.setText("FREE");
+            popTable('A');
+        }
+        else if(section.equals("B"))
+        {
+            popTable('B');
         }
         else if(section.equals("C"))
         {
-            //Monday
-            t11.setText("FREE");
-            t12.setText("Database \nManagement Systems\nDr. Jeyakumar G.\nA203");
-            t13.setText("Theory of \nComputation\nMs. Prathilothamai M.\nA203");
-            t14.setText("Linear Algebra\nDr. J. Geetha\nA303");
-            t15.setText("Computer Organisation \nand Architecture\nDr. Dhanya N. M.\nA303");
-            t16.setText("Cloud Computing\nDr. Gowtham R.\nA303");
-            //Tuesday
-            t21.setText("FREE");
-            t22.setText("Theory of \nComputation\nMs. Prathilothamai M.\nA203");
-            t23.setText("Cloud Computing\nDr. Gowtham R.\nA203");
-            t24.setText("Linear Algebra\nDr. J. Geetha\nA303");
-            t25.setText("Computer Organisation \nand Architecture\nDr. Dhanya N. M.\nA303");
-            t26.setText("FREE");
-            //Wednesday
-            t31.setText("Linear Algebra\nDr. J. Geetha\nA203");
-            t32.setText("Theory of \nComputation\nMs. Prathilothamai M.\nA203");
-            t33.setText("FREE");
-            t34.setText("Database \nManagement Systems\nDr. Jeyakumar G.\nA303");
-            t35.setText("Cloud Computing\nDr. Gowtham R.\nA303");
-            t36.setText("Computer Organisation \nand Architecture\nDr. Dhanya N. M.\nA303");
-            //Thursday
-            t41.setText("Computer Organisation \nand Architecture\nDr. Dhanya N. M.\nA203");
-            t42.setText("Database \nManagement Systems\nDr. Jeyakumar G.\nA203");
-            t43.setText("Theory of \nComputation\nMs. Prathilothamai M.\nA203");
-            t44.setText("FREE");
-            t45.setText("Linear Algebra\nDr. J. Geetha\nA303");
-            t46.setText("Cloud Computing\nDr. Gowtham R.\nA303");
-            //Friday
-            t51.setText("Theory of \nComputation\nMs. Prathilothamai M.\nA203");
-            t52.setText("Linear Algebra\nDr. J. Geetha\nA203");
-            t53.setText("Database \nManagement Systems\nDr. Jeyakumar G.\nA203");
-            t54.setText("Computer Organisation \nand Architecture\nDr. Dhanya N. M.\nA303");
-            t55.setText("FREE");
-            t56.setText("FREE");
+            popTable('C');
         }
         else if(section.equals("D"))
         {
-            //Monday
-            t11.setText("Linear Algebra\nDr. J. Geetha\nA204");
-            t12.setText("Game Theory\nDr. Ganesh Neelakanta Iyer\nA204");
-            t13.setText("Computer Organisation \nand Architecture\nDr. Dhanya N. M.\nA204");
-            t14.setText("Database \nManagement Systems\nDr. Jeyakumar G.\nA304");
-            t15.setText("Theory of \nComputation\nMs. Prathilothamai M.\nA304");
-            t16.setText("FREE");
-            //Tuesday
-            t21.setText("Game Theory\nDr. Ganesh Neelakanta Iyer\nA204");
-            t22.setText("Computer Organisation \nand Architecture\nDr. Dhanya N. M.\nA204");
-            t23.setText("FREE");
-            t24.setText("FREE");
-            t25.setText("Theory of \nComputation\nMs. Prathilothamai M.\nA304");
-            t26.setText("Linear Algebra\nDr. J. Geetha\nA304");
-            //Wednesday
-            t31.setText("Computer Organisation \nand Architecture\nDr. Dhanya N. M.\nA204");
-            t32.setText("Database \nManagement Systems\nDr. Jeyakumar G.\nA204");
-            t33.setText("FREE");
-            t34.setText("FREE");
-            t35.setText("Theory of \nComputation\nMs. Prathilothamai M.\nA304");
-            t36.setText("Linear Algebra\nDr. J. Geetha\nA304");
-            //Thursday
-            t41.setText("Theory of \nComputation\nMs. Prathilothamai M.\nA204");
-            t42.setText("Game Theory\nDr. Ganesh Neelakanta Iyer\nA204");
-            t43.setText("Linear Algebra\nDr. J. Geetha\nA204");
-            t44.setText("Computer Organisation \nand Architecture\nDr. Dhanya N. M.\nA304");
-            t45.setText("Database \nManagement Systems\nDr. Jeyakumar G.\nA304");
-            t46.setText("FREE");
-            //Friday
-            t51.setText("Database \nManagement Systems\nDr. Jeyakumar G.\nA204");
-            t52.setText("Computer Organisation \nand Architecture\nDr. Dhanya N. M.\nA204");
-            t53.setText("Game Theory\nDr. Ganesh Neelakanta Iyer\nA204");
-            t54.setText("Theory of \nComputation\nMs. Prathilothamai M.\nA304");
-            t55.setText("Linear Algebra\nDr. J. Geetha\nA304");
-            t56.setText("FREE");
+            popTable('D');
         }
     }
 
@@ -271,6 +174,675 @@ public class studentGenerate extends AppCompatActivity implements View.OnClickLi
             }
         });
         prompt.show();
+    }
+
+    public void popTable(char sec)
+    {
+        Cursor c1,c2,c3;
+        int slot;
+        if(sec=='A')
+        {
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM seca where day = '1' and slot = '1'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t11.setText("FREE");
+            }
+            else 
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A201";
+                else
+                    roomNo = "A301";
+                t11.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM seca where day = '1' and slot = '2'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t12.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A201";
+                else
+                    roomNo = "A301";
+                t12.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM seca where day = '1' and slot = '3'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t13.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A201";
+                else
+                    roomNo = "A301";
+                t13.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM seca where day = '1' and slot = '4'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t14.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A201";
+                else
+                    roomNo = "A301";
+                t14.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM seca where day = '1' and slot = '5'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t15.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A201";
+                else
+                    roomNo = "A301";
+                t15.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM seca where day = '1' and slot = '6'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t16.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A201";
+                else
+                    roomNo = "A301";
+                t16.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM seca where day = '2' and slot = '1'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t21.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A201";
+                else
+                    roomNo = "A301";
+                t21.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM seca where day = '2' and slot = '2'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t22.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A201";
+                else
+                    roomNo = "A301";
+                t22.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM seca where day = '2' and slot = '3'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t23.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A201";
+                else
+                    roomNo = "A301";
+                t23.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM seca where day = '2' and slot = '4'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t24.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A201";
+                else
+                    roomNo = "A301";
+                t24.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM seca where day = '2' and slot = '5'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t25.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A201";
+                else
+                    roomNo = "A301";
+                t25.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM seca where day = '2' and slot = '6'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t26.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A201";
+                else
+                    roomNo = "A301";
+                t26.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM seca where day = '3' and slot = '1'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t31.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A201";
+                else
+                    roomNo = "A301";
+                t31.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM seca where day = '3' and slot = '2'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t32.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A201";
+                else
+                    roomNo = "A301";
+                t32.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM seca where day = '3' and slot = '3'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t33.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A201";
+                else
+                    roomNo = "A301";
+                t33.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM seca where day = '3' and slot = '4'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t34.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A201";
+                else
+                    roomNo = "A301";
+                t34.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM seca where day = '3' and slot = '5'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t35.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A201";
+                else
+                    roomNo = "A301";
+                t35.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM seca where day = '3' and slot = '6'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t36.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A201";
+                else
+                    roomNo = "A301";
+                t36.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM seca where day = '4' and slot = '1'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t41.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A201";
+                else
+                    roomNo = "A301";
+                t41.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM seca where day = '4' and slot = '2'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t42.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A201";
+                else
+                    roomNo = "A301";
+                t42.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM seca where day = '4' and slot = '3'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t43.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A201";
+                else
+                    roomNo = "A301";
+                t43.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM seca where day = '4' and slot = '4'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t44.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A201";
+                else
+                    roomNo = "A301";
+                t44.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM seca where day = '4' and slot = '5'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t45.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A201";
+                else
+                    roomNo = "A301";
+                t45.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM seca where day = '4' and slot = '6'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t46.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A201";
+                else
+                    roomNo = "A301";
+                t46.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM seca where day = '5' and slot = '1'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t51.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A201";
+                else
+                    roomNo = "A301";
+                t51.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM seca where day = '5' and slot = '2'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t52.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A201";
+                else
+                    roomNo = "A301";
+                t52.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM seca where day = '5' and slot = '3'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t53.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A201";
+                else
+                    roomNo = "A301";
+                t53.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM seca where day = '5' and slot = '4'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t54.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A201";
+                else
+                    roomNo = "A301";
+                t54.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM seca where day = '5' and slot = '5'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t55.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A201";
+                else
+                    roomNo = "A301";
+                t55.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM seca where day = '5' and slot = '6'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t56.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A201";
+                else
+                    roomNo = "A301";
+                t56.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+        }
+        //else if(sec=='B')
     }
     
     int s = 0;
