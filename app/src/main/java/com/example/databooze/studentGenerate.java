@@ -9,10 +9,15 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class studentGenerate extends AppCompatActivity implements View.OnClickListener {
     TextView    t11,t12,t13,t14,t15,t16,
@@ -23,6 +28,8 @@ public class studentGenerate extends AppCompatActivity implements View.OnClickLi
     SQLiteDatabase dataBooze;
     String courseName="null",facultyName,roomNo,courseCode;
     String section, editAccess;
+    List<String> courseNames,courseIds,facultyNames,roomNos;
+    ArrayAdapter<String> ad1,ad2,ad3,ad4;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -131,6 +138,33 @@ public class studentGenerate extends AppCompatActivity implements View.OnClickLi
         {
             popTable('D');
         }
+
+        courseNames = new ArrayList<>();
+        courseIds = new ArrayList<>();
+        facultyNames = new ArrayList<>();
+        roomNos = new ArrayList<>();
+        Cursor c = dataBooze.rawQuery("SELECT course_id,name FROM course", null);
+        while(c.moveToNext())
+        {
+            courseIds.add(c.getString(0));
+            courseNames.add(c.getString(1));
+        }
+        Cursor f = dataBooze.rawQuery("SELECT name FROM faculty", null);
+        while(f.moveToNext())
+        {
+            facultyNames.add(f.getString(0));
+        }
+        Cursor r = dataBooze.rawQuery("SELECT roomNumber,block FROM classroom", null);
+        while(r.moveToNext())
+        {
+            roomNos.add(r.getString(1)+r.getString(0));
+        }
+
+        ad1 = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_selectable_list_item,courseNames);
+        ad2 = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_selectable_list_item,courseIds);
+        ad3 = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_selectable_list_item,facultyNames);
+        ad4 = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_selectable_list_item,roomNos);
+
     }
 
     public void dialogPrompt(final View view)
@@ -139,16 +173,24 @@ public class studentGenerate extends AppCompatActivity implements View.OnClickLi
         Context context = studentGenerate.this;
         LinearLayout layout = new LinearLayout(context);
         layout.setOrientation(LinearLayout.VERTICAL);
-        final EditText course = new EditText(context);
+        final AutoCompleteTextView course = new AutoCompleteTextView(context);
+        course.setThreshold(1);
+        course.setAdapter(ad1);
         course.setHint("Course Name");
         layout.addView(course);
-        final EditText courseID = new EditText(context);
+        final AutoCompleteTextView courseID = new AutoCompleteTextView(context);
+        courseID.setThreshold(1);
+        courseID.setAdapter(ad2);
         courseID.setHint("Course Code");
         layout.addView(courseID);
-        final EditText faculty = new EditText(context);
+        final AutoCompleteTextView faculty = new AutoCompleteTextView(context);
+        faculty.setThreshold(1);
+        faculty.setAdapter(ad3);
         faculty.setHint("Faculty Name");
         layout.addView(faculty);
-        final EditText room = new EditText(context);
+        final AutoCompleteTextView room = new AutoCompleteTextView(context);
+        room.setThreshold(1);
+        room.setAdapter(ad4);
         room.setHint("Room No.");
         layout.addView(room);
         prompt.setCancelable(true);
@@ -1906,7 +1948,6 @@ public class studentGenerate extends AppCompatActivity implements View.OnClickLi
                         }
                     }
                 }
-                
             }
         });
         prompt.setNegativeButton("CANCEL", new DialogInterface.OnClickListener()
@@ -4572,7 +4613,6 @@ public class studentGenerate extends AppCompatActivity implements View.OnClickLi
                 t56.setText(courseName+"\n"+facultyName+"\n"+roomNo);
             }
         }
-        
     }
     
     int s;
@@ -4580,6 +4620,7 @@ public class studentGenerate extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(View view)
     {
-        dialogPrompt(view);
+        if(editAccess.equals("1"))
+            dialogPrompt(view);
     }
 }
