@@ -18,10 +18,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button proceed;
     SQLiteDatabase dataBooze;
 
+    Button test;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        test = findViewById(R.id.button2);
+        test.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                dataBooze.execSQL("update seca set course='FREE' where day='5' and slot = '6'");
+                Cursor c = dataBooze.rawQuery("SELECT * FROM seca", null);
+                if (c.getCount() == 0) {
+                    showMessage("Error", "No records found");
+                    return;
+                }
+                StringBuffer buffer =
+                        new StringBuffer();
+                while (c.moveToNext())
+                {
+                    buffer.append("Day: " + c.getString(0) + "\n");
+                    buffer.append("Slot: " + c.getString(1) + "\n");
+                    buffer.append("Course: " + c.getString(2) + "\n");
+                }
+                showMessage("Section A Details", buffer.toString());
+            }
+        });
+
         userName=findViewById(R.id.edETUserName);
         passWord=findViewById(R.id.edETPassword);
         proceed=findViewById(R.id.edButProceed);

@@ -2,6 +2,7 @@ package com.example.databooze;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AlertDialog;
@@ -132,7 +133,7 @@ public class studentGenerate extends AppCompatActivity implements View.OnClickLi
         }
     }
 
-    public void dialogPrompt()
+    public void dialogPrompt(final View view)
     {
         AlertDialog.Builder prompt = new AlertDialog.Builder(studentGenerate.this);
         Context context = studentGenerate.this;
@@ -162,7 +163,1750 @@ public class studentGenerate extends AppCompatActivity implements View.OnClickLi
                 facultyName = faculty.getText().toString();
                 roomNo = room.getText().toString();
                 courseCode = courseID.getText().toString();
-                s = 1;
+                /*Intent prev = new Intent(getApplicationContext(),sixth.class);
+                startActivity(prev);*/
+
+                if(view==t11)
+                {
+                    s = 1;
+                    if(editAccess.equals("1"))
+                        //dialogPrompt();
+                    if(section.equals("A")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update seca set course = 'FREE' where day = '1' and slot = '1'");
+                            popTable('A');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '1' and slot = '1'");
+                            t11.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secb set course = 'FREE' where day = '1' and slot = '1'");
+                            popTable('B');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '1' and slot = '1'");
+                            t11.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secc set course = 'FREE' where day = '1' and slot = '1'");
+                            popTable('C');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '1' and slot = '1'");
+                            t11.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secd set course = 'FREE' where day = '1' and slot = '1'");
+                            popTable('D');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '1' and slot = '1'");
+                            t11.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                }
+                else if(view==t12)
+                {
+                    s = 1;
+                    if(editAccess.equals("1"))
+                        //dialogPrompt();
+                    if(section.equals("A")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update seca set course = 'FREE' where day = '1' and slot = '2'");
+                            popTable('A');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '1' and slot = '2'");
+                            t12.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secb set course = 'FREE' where day = '1' and slot = '2'");
+                            popTable('B');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '1' and slot = '2'");
+                            t12.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secc set course = 'FREE' where day = '1' and slot = '2'");
+                            popTable('C');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '1' and slot = '2'");
+                            t12.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secd set course = 'FREE' where day = '1' and slot = '2'");
+                            popTable('D');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '1' and slot = '2'");
+                            t12.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                }
+                else if(view==t13)
+                {
+                    s = 1;
+                    if(editAccess.equals("1"))
+                        //dialogPrompt();
+                    if(section.equals("A")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update seca set course = 'FREE' where day = '1' and slot = '3'");
+                            popTable('A');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '1' and slot = '3'");
+                            t13.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secb set course = 'FREE' where day = '1' and slot = '3'");
+                            popTable('B');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '1' and slot = '3'");
+                            t13.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secc set course = 'FREE' where day = '1' and slot = '3'");
+                            popTable('C');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '1' and slot = '3'");
+                            t13.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secd set course = 'FREE' where day = '1' and slot = '3'");
+                            popTable('D');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '1' and slot = '3'");
+                            t13.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                }
+                else if(view==t14)
+                {
+                    s = 1;
+                    if(editAccess.equals("1"))
+                        //dialogPrompt();
+                    if(section.equals("A")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update seca set course = 'FREE' where day = '1' and slot = '4'");
+                            popTable('A');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '1' and slot = '4'");
+                            t14.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secb set course = 'FREE' where day = '1' and slot = '4'");
+                            popTable('B');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '1' and slot = '4'");
+                            t14.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secc set course = 'FREE' where day = '1' and slot = '4'");
+                            popTable('C');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '1' and slot = '4'");
+                            t14.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secd set course = 'FREE' where day = '1' and slot = '4'");
+                            popTable('D');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '1' and slot = '4'");
+                            t14.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                }
+                else if(view==t15)
+                {
+                    s = 1;
+                    if(editAccess.equals("1"))
+                        //dialogPrompt();
+                    if(section.equals("A")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update seca set course = 'FREE' where day = '1' and slot = '5'");
+                            popTable('A');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '1' and slot = '5'");
+                            t15.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secb set course = 'FREE' where day = '1' and slot = '5'");
+                            popTable('B');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '1' and slot = '5'");
+                            t15.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secc set course = 'FREE' where day = '1' and slot = '5'");
+                            popTable('C');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '1' and slot = '5'");
+                            t15.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secd set course = 'FREE' where day = '1' and slot = '5'");
+                            popTable('D');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '1' and slot = '5'");
+                            t15.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                }
+                else if(view==t16)
+                {
+                    s = 1;
+                    if(editAccess.equals("1"))
+                        //dialogPrompt();
+                    if(section.equals("A")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update seca set course = 'FREE' where day = '1' and slot = '6'");
+                            popTable('A');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '1' and slot = '6'");
+                            t16.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secb set course = 'FREE' where day = '1' and slot = '6'");
+                            popTable('B');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '1' and slot = '6'");
+                            t16.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secc set course = 'FREE' where day = '1' and slot = '6'");
+                            popTable('C');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '1' and slot = '6'");
+                            t16.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secd set course = 'FREE' where day = '1' and slot = '6'");
+                            popTable('D');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '1' and slot = '6'");
+                            t16.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                }
+                else if(view==t21)
+                {
+                    s = 1;
+                    if(editAccess.equals("1"))
+                        //dialogPrompt();
+                    if(section.equals("A")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update seca set course = 'FREE' where day = '2' and slot = '1'");
+                            popTable('A');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '2' and slot = '1'");
+                            t21.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secb set course = 'FREE' where day = '2' and slot = '1'");
+                            popTable('B');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '2' and slot = '1'");
+                            t21.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secc set course = 'FREE' where day = '2' and slot = '1'");
+                            popTable('C');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '2' and slot = '1'");
+                            t21.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secd set course = 'FREE' where day = '2' and slot = '1'");
+                            popTable('D');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '2' and slot = '1'");
+                            t21.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                }
+                else if(view==t22)
+                {
+                    s = 1;
+                    if(editAccess.equals("1"))
+                        //dialogPrompt();
+                    if(section.equals("A")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update seca set course = 'FREE' where day = '2' and slot = '2'");
+                            popTable('A');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '2' and slot = '2'");
+                            t22.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secb set course = 'FREE' where day = '2' and slot = '2'");
+                            popTable('B');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '2' and slot = '2'");
+                            t22.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secc set course = 'FREE' where day = '2' and slot = '2'");
+                            popTable('C');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '2' and slot = '2'");
+                            t22.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secd set course = 'FREE' where day = '2' and slot = '2'");
+                            popTable('D');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '2' and slot = '2'");
+                            t22.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                }
+                else if(view==t23)
+                {
+                    s = 1;
+                    if(editAccess.equals("1"))
+                        //dialogPrompt();
+                    if(section.equals("A")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update seca set course = 'FREE' where day = '2' and slot = '3'");
+                            popTable('A');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '2' and slot = '3'");
+                            t23.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secb set course = 'FREE' where day = '2' and slot = '3'");
+                            popTable('B');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '2' and slot = '3'");
+                            t23.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secc set course = 'FREE' where day = '2' and slot = '3'");
+                            popTable('C');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '2' and slot = '3'");
+                            t23.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secd set course = 'FREE' where day = '2' and slot = '3'");
+                            popTable('D');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '2' and slot = '3'");
+                            t23.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                }
+                else if(view==t24)
+                {
+                    s = 1;
+                    if(editAccess.equals("1"))
+                        //dialogPrompt();
+                    if(section.equals("A")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update seca set course = 'FREE' where day = '2' and slot = '4'");
+                            popTable('A');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '2' and slot = '4'");
+                            t24.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secb set course = 'FREE' where day = '2' and slot = '4'");
+                            popTable('B');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '2' and slot = '4'");
+                            t24.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secc set course = 'FREE' where day = '2' and slot = '4'");
+                            popTable('C');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '2' and slot = '4'");
+                            t24.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secd set course = 'FREE' where day = '2' and slot = '4'");
+                            popTable('D');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '2' and slot = '4'");
+                            t24.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                }
+                else if(view==t25)
+                {
+                    s = 1;
+                    if(editAccess.equals("1"))
+                        //dialogPrompt();
+                    if(section.equals("A")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update seca set course = 'FREE' where day = '2' and slot = '5'");
+                            popTable('A');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '2' and slot = '5'");
+                            t25.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secb set course = 'FREE' where day = '2' and slot = '5'");
+                            popTable('B');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '2' and slot = '5'");
+                            t25.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secc set course = 'FREE' where day = '2' and slot = '5'");
+                            popTable('C');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '2' and slot = '5'");
+                            t25.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secd set course = 'FREE' where day = '2' and slot = '5'");
+                            popTable('D');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '2' and slot = '5'");
+                            t25.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                }
+                else if(view==t26)
+                {
+                    s = 1;
+                    if(editAccess.equals("1"))
+                        //dialogPrompt();
+                    if(section.equals("A")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update seca set course = 'FREE' where day = '2' and slot = '6'");
+                            popTable('A');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '2' and slot = '6'");
+                            t26.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secb set course = 'FREE' where day = '2' and slot = '6'");
+                            popTable('B');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '2' and slot = '6'");
+                            t26.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secc set course = 'FREE' where day = '2' and slot = '6'");
+                            popTable('C');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '2' and slot = '6'");
+                            t26.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secd set course = 'FREE' where day = '2' and slot = '6'");
+                            popTable('D');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '2' and slot = '6'");
+                            t26.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                }
+                else if(view==t31)
+                {
+                    s = 1;
+                    if(editAccess.equals("1"))
+                        //dialogPrompt();
+                    if(section.equals("A")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update seca set course = 'FREE' where day = '3' and slot = '1'");
+                            popTable('A');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '3' and slot = '1'");
+                            t31.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secb set course = 'FREE' where day = '3' and slot = '1'");
+                            popTable('B');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '3' and slot = '1'");
+                            t31.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secc set course = 'FREE' where day = '3' and slot = '1'");
+                            popTable('C');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '3' and slot = '1'");
+                            t31.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secd set course = 'FREE' where day = '3' and slot = '1'");
+                            popTable('D');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '3' and slot = '1'");
+                            t31.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                }
+                else if(view==t32)
+                {
+                    s = 1;
+                    if(editAccess.equals("1"))
+                        //dialogPrompt();
+                    if(section.equals("A")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update seca set course = 'FREE' where day = '3' and slot = '2'");
+                            popTable('A');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '3' and slot = '2'");
+                            t32.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secb set course = 'FREE' where day = '3' and slot = '2'");
+                            popTable('B');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '3' and slot = '2'");
+                            t32.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secc set course = 'FREE' where day = '3' and slot = '2'");
+                            popTable('C');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '3' and slot = '2'");
+                            t32.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secd set course = 'FREE' where day = '3' and slot = '2'");
+                            popTable('D');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '3' and slot = '2'");
+                            t32.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                }
+                else if(view==t33)
+                {
+                    s = 1;
+                    if(editAccess.equals("1"))
+                        //dialogPrompt();
+                    if(section.equals("A")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update seca set course = 'FREE' where day = '3' and slot = '3'");
+                            popTable('A');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '3' and slot = '3'");
+                            t33.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secb set course = 'FREE' where day = '3' and slot = '3'");
+                            popTable('B');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '3' and slot = '3'");
+                            t33.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secc set course = 'FREE' where day = '3' and slot = '3'");
+                            popTable('C');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '3' and slot = '3'");
+                            t33.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secd set course = 'FREE' where day = '3' and slot = '3'");
+                            popTable('D');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '3' and slot = '3'");
+                            t33.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                }
+                else if(view==t34)
+                {
+                    s = 1;
+                    if(editAccess.equals("1"))
+                        //dialogPrompt();
+                    if(section.equals("A")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update seca set course = 'FREE' where day = '3' and slot = '4'");
+                            popTable('A');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '3' and slot = '4'");
+                            t34.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secb set course = 'FREE' where day = '3' and slot = '4'");
+                            popTable('B');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '3' and slot = '4'");
+                            t34.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secc set course = 'FREE' where day = '3' and slot = '4'");
+                            popTable('C');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '3' and slot = '4'");
+                            t34.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secd set course = 'FREE' where day = '3' and slot = '4'");
+                            popTable('D');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '3' and slot = '4'");
+                            t34.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                }
+                else if(view==t35)
+                {
+                    s = 1;
+                    if(editAccess.equals("1"))
+                        //dialogPrompt();
+                    if(section.equals("A")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update seca set course = 'FREE' where day = '3' and slot = '5'");
+                            popTable('A');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '3' and slot = '5'");
+                            t35.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secb set course = 'FREE' where day = '3' and slot = '5'");
+                            popTable('B');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '3' and slot = '5'");
+                            t35.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secc set course = 'FREE' where day = '3' and slot = '5'");
+                            popTable('C');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '3' and slot = '5'");
+                            t35.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secd set course = 'FREE' where day = '3' and slot = '5'");
+                            popTable('D');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '3' and slot = '5'");
+                            t35.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                }
+                else if(view==t36)
+                {
+                    s = 1;
+                    if(editAccess.equals("1"))
+                        //dialogPrompt();
+                    if(section.equals("A")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update seca set course = 'FREE' where day = '3' and slot = '6'");
+                            popTable('A');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '3' and slot = '6'");
+                            t36.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secb set course = 'FREE' where day = '3' and slot = '6'");
+                            popTable('B');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '3' and slot = '6'");
+                            t36.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secc set course = 'FREE' where day = '3' and slot = '6'");
+                            popTable('C');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '3' and slot = '6'");
+                            t36.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secd set course = 'FREE' where day = '3' and slot = '6'");
+                            popTable('D');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '3' and slot = '6'");
+                            t36.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                }
+                else if(view==t41)
+                {
+                    s = 1;
+                    if(editAccess.equals("1"))
+                        //dialogPrompt();
+                    if(section.equals("A")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update seca set course = 'FREE' where day = '4' and slot = '1'");
+                            popTable('A');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '4' and slot = '1'");
+                            t41.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secb set course = 'FREE' where day = '4' and slot = '1'");
+                            popTable('B');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '4' and slot = '1'");
+                            t41.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secc set course = 'FREE' where day = '4' and slot = '1'");
+                            popTable('C');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '4' and slot = '1'");
+                            t41.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secd set course = 'FREE' where day = '4' and slot = '1'");
+                            popTable('D');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '4' and slot = '1'");
+                            t41.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                }
+                else if(view==t42)
+                {
+                    s = 1;
+                    if(editAccess.equals("1"))
+                        //dialogPrompt();
+                    if(section.equals("A")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update seca set course = 'FREE' where day = '4' and slot = '2'");
+                            popTable('A');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '4' and slot = '2'");
+                            t42.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secb set course = 'FREE' where day = '4' and slot = '2'");
+                            popTable('B');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '4' and slot = '2'");
+                            t42.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secc set course = 'FREE' where day = '4' and slot = '2'");
+                            popTable('C');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '4' and slot = '2'");
+                            t42.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secd set course = 'FREE' where day = '4' and slot = '2'");
+                            popTable('D');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '4' and slot = '2'");
+                            t42.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                }
+                else if(view==t43)
+                {
+                    s = 1;
+                    if(editAccess.equals("1"))
+                        //dialogPrompt();
+                    if(section.equals("A")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update seca set course = 'FREE' where day = '4' and slot = '3'");
+                            popTable('A');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '4' and slot = '3'");
+                            t43.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secb set course = 'FREE' where day = '4' and slot = '3'");
+                            popTable('B');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '4' and slot = '3'");
+                            t43.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secc set course = 'FREE' where day = '4' and slot = '3'");
+                            popTable('C');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '4' and slot = '3'");
+                            t43.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secd set course = 'FREE' where day = '4' and slot = '3'");
+                            popTable('D');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '4' and slot = '3'");
+                            t43.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                }
+                else if(view==t44)
+                {
+                    s = 1;
+                    if(editAccess.equals("1"))
+                        //dialogPrompt();
+                    if(section.equals("A")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update seca set course = 'FREE' where day = '4' and slot = '4'");
+                            popTable('A');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '4' and slot = '4'");
+                            t44.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secb set course = 'FREE' where day = '4' and slot = '4'");
+                            popTable('B');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '4' and slot = '4'");
+                            t44.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secc set course = 'FREE' where day = '4' and slot = '4'");
+                            popTable('C');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '4' and slot = '4'");
+                            t44.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secd set course = 'FREE' where day = '4' and slot = '4'");
+                            popTable('D');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '4' and slot = '4'");
+                            t44.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                }
+                else if(view==t45)
+                {
+                    s = 1;
+                    if(editAccess.equals("1"))
+                        //dialogPrompt();
+                    if(section.equals("A")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update seca set course = 'FREE' where day = '4' and slot = '5'");
+                            popTable('A');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '4' and slot = '5'");
+                            t45.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secb set course = 'FREE' where day = '4' and slot = '5'");
+                            popTable('B');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '4' and slot = '5'");
+                            t45.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secc set course = 'FREE' where day = '4' and slot = '5'");
+                            popTable('C');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '4' and slot = '5'");
+                            t45.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secd set course = 'FREE' where day = '4' and slot = '5'");
+                            popTable('D');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '4' and slot = '5'");
+                            t45.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                }
+                else if(view==t46)
+                {
+                    s = 1;
+                    if(editAccess.equals("1"))
+                        //dialogPrompt();
+                    if(section.equals("A")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update seca set course = 'FREE' where day = '4' and slot = '6'");
+                            popTable('A');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '4' and slot = '6'");
+                            t46.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secb set course = 'FREE' where day = '4' and slot = '6'");
+                            popTable('B');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '4' and slot = '6'");
+                            t46.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secc set course = 'FREE' where day = '4' and slot = '6'");
+                            popTable('C');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '4' and slot = '6'");
+                            t46.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secd set course = 'FREE' where day = '4' and slot = '6'");
+                            popTable('D');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '4' and slot = '6'");
+                            t46.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                }
+                else if(view==t51)
+                {
+                    s = 1;
+                    if(editAccess.equals("1"))
+                        //dialogPrompt();
+                    if(section.equals("A")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update seca set course = 'FREE' where day = '5' and slot = '1'");
+                            popTable('A');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '5' and slot = '1'");
+                            t51.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secb set course = 'FREE' where day = '5' and slot = '1'");
+                            popTable('B');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '5' and slot = '1'");
+                            t51.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secc set course = 'FREE' where day = '5' and slot = '1'");
+                            popTable('C');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '5' and slot = '1'");
+                            t51.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secd set course = 'FREE' where day = '5' and slot = '1'");
+                            popTable('D');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '5' and slot = '1'");
+                            t51.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                }
+                else if(view==t52)
+                {
+                    s = 1;
+                    if(editAccess.equals("1"))
+                        //dialogPrompt();
+                    if(section.equals("A")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update seca set course = 'FREE' where day = '5' and slot = '2'");
+                            popTable('A');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '5' and slot = '2'");
+                            t52.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secb set course = 'FREE' where day = '5' and slot = '2'");
+                            popTable('B');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '5' and slot = '2'");
+                            t52.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secc set course = 'FREE' where day = '5' and slot = '2'");
+                            popTable('C');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '5' and slot = '2'");
+                            t52.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secd set course = 'FREE' where day = '5' and slot = '2'");
+                            popTable('D');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '5' and slot = '2'");
+                            t52.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                }
+                else if(view==t53)
+                {
+                    s = 1;
+                    if(editAccess.equals("1"))
+                        //dialogPrompt();
+                    if(section.equals("A")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update seca set course = 'FREE' where day = '5' and slot = '3'");
+                            popTable('A');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '5' and slot = '3'");
+                            t53.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secb set course = 'FREE' where day = '5' and slot = '3'");
+                            popTable('B');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '5' and slot = '3'");
+                            t53.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secc set course = 'FREE' where day = '5' and slot = '3'");
+                            popTable('C');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '5' and slot = '3'");
+                            t53.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secd set course = 'FREE' where day = '5' and slot = '3'");
+                            popTable('D');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '5' and slot = '3'");
+                            t53.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                }
+                else if(view==t54)
+                {
+                    s = 1;
+                    if(editAccess.equals("1"))
+                        //dialogPrompt();
+                    if(section.equals("A")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update seca set course = 'FREE' where day = '5' and slot = '4'");
+                            popTable('A');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '5' and slot = '4'");
+                            t54.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secb set course = 'FREE' where day = '5' and slot = '4'");
+                            popTable('B');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '5' and slot = '4'");
+                            t54.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secc set course = 'FREE' where day = '5' and slot = '4'");
+                            popTable('C');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '5' and slot = '4'");
+                            t54.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secd set course = 'FREE' where day = '5' and slot = '4'");
+                            popTable('D');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '5' and slot = '4'");
+                            t54.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                }
+                else if(view==t55)
+                {
+                    s = 1;
+                    if(editAccess.equals("1"))
+                        //dialogPrompt();
+                    if(section.equals("A")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update seca set course = 'FREE' where day = '5' and slot = '5'");
+                            popTable('A');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '5' and slot = '5'");
+                            t55.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secb set course = 'FREE' where day = '5' and slot = '5'");
+                            popTable('B');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '5' and slot = '5'");
+                            t55.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secc set course = 'FREE' where day = '5' and slot = '5'");
+                            popTable('C');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '5' and slot = '5'");
+                            t55.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secd set course = 'FREE' where day = '5' and slot = '5'");
+                            popTable('D');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '5' and slot = '5'");
+                            t55.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                }
+                else if(view==t56)
+                {
+                    s = 1;
+                    if(editAccess.equals("1"))
+                        //dialogPrompt();
+                    if(section.equals("A")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update seca set course = 'FREE' where day = '5' and slot = '6'");
+                            popTable('A');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '5' and slot = '6'");
+                            t56.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secb set course = 'FREE' where day = '5' and slot = '6'");
+                            popTable('B');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '5' and slot = '6'");
+                            t56.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secc set course = 'FREE' where day = '5' and slot = '6'");
+                            popTable('C');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '5' and slot = '6'");
+                            t56.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                    else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
+                    {
+                        if(courseName.equals("FREE"))
+                        {
+                            dataBooze.execSQL("update secd set course = 'FREE' where day = '5' and slot = '6'");
+                            popTable('D');
+                        }
+                        else
+                        {
+                            dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '5' and slot = '6'");
+                            t56.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+                        }
+                    }
+                }
+                
             }
         });
         prompt.setNegativeButton("CANCEL", new DialogInterface.OnClickListener()
@@ -842,1753 +2586,2000 @@ public class studentGenerate extends AppCompatActivity implements View.OnClickLi
                 t56.setText(courseName+"\n"+facultyName+"\n"+roomNo);
             }
         }
-        //else if(sec=='B')
+        else if(sec=='B')
+        {
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secb where day = '1' and slot = '1'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t11.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A202";
+                else
+                    roomNo = "A302";
+                t11.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secb where day = '1' and slot = '2'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t12.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A202";
+                else
+                    roomNo = "A302";
+                t12.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secb where day = '1' and slot = '3'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t13.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A202";
+                else
+                    roomNo = "A302";
+                t13.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secb where day = '1' and slot = '4'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t14.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A202";
+                else
+                    roomNo = "A302";
+                t14.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secb where day = '1' and slot = '5'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t15.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A202";
+                else
+                    roomNo = "A302";
+                t15.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secb where day = '1' and slot = '6'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t16.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A202";
+                else
+                    roomNo = "A302";
+                t16.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secb where day = '2' and slot = '1'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t21.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A202";
+                else
+                    roomNo = "A302";
+                t21.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secb where day = '2' and slot = '2'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t22.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A202";
+                else
+                    roomNo = "A302";
+                t22.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secb where day = '2' and slot = '3'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t23.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A202";
+                else
+                    roomNo = "A302";
+                t23.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secb where day = '2' and slot = '4'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t24.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A202";
+                else
+                    roomNo = "A302";
+                t24.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secb where day = '2' and slot = '5'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t25.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A202";
+                else
+                    roomNo = "A302";
+                t25.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secb where day = '2' and slot = '6'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t26.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A202";
+                else
+                    roomNo = "A302";
+                t26.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secb where day = '3' and slot = '1'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t31.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A202";
+                else
+                    roomNo = "A302";
+                t31.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secb where day = '3' and slot = '2'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t32.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A202";
+                else
+                    roomNo = "A302";
+                t32.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secb where day = '3' and slot = '3'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t33.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A202";
+                else
+                    roomNo = "A302";
+                t33.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secb where day = '3' and slot = '4'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t34.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A202";
+                else
+                    roomNo = "A302";
+                t34.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secb where day = '3' and slot = '5'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t35.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A202";
+                else
+                    roomNo = "A302";
+                t35.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secb where day = '3' and slot = '6'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t36.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A202";
+                else
+                    roomNo = "A302";
+                t36.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secb where day = '4' and slot = '1'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t41.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A202";
+                else
+                    roomNo = "A302";
+                t41.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secb where day = '4' and slot = '2'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t42.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A202";
+                else
+                    roomNo = "A302";
+                t42.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secb where day = '4' and slot = '3'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t43.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A202";
+                else
+                    roomNo = "A302";
+                t43.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secb where day = '4' and slot = '4'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t44.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A202";
+                else
+                    roomNo = "A302";
+                t44.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secb where day = '4' and slot = '5'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t45.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A202";
+                else
+                    roomNo = "A302";
+                t45.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secb where day = '4' and slot = '6'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t46.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A202";
+                else
+                    roomNo = "A302";
+                t46.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secb where day = '5' and slot = '1'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t51.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A202";
+                else
+                    roomNo = "A302";
+                t51.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secb where day = '5' and slot = '2'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t52.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A202";
+                else
+                    roomNo = "A302";
+                t52.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secb where day = '5' and slot = '3'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t53.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A202";
+                else
+                    roomNo = "A302";
+                t53.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secb where day = '5' and slot = '4'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t54.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A202";
+                else
+                    roomNo = "A302";
+                t54.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secb where day = '5' and slot = '5'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t55.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A202";
+                else
+                    roomNo = "A302";
+                t55.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secb where day = '5' and slot = '6'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t56.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A202";
+                else
+                    roomNo = "A302";
+                t56.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+        }
+        else if(sec=='C')
+        {
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secc where day = '1' and slot = '1'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t11.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A203";
+                else
+                    roomNo = "A303";
+                t11.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secc where day = '1' and slot = '2'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t12.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A203";
+                else
+                    roomNo = "A303";
+                t12.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secc where day = '1' and slot = '3'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t13.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A203";
+                else
+                    roomNo = "A303";
+                t13.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secc where day = '1' and slot = '4'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t14.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A203";
+                else
+                    roomNo = "A303";
+                t14.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secc where day = '1' and slot = '5'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t15.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A203";
+                else
+                    roomNo = "A303";
+                t15.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secc where day = '1' and slot = '6'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t16.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A203";
+                else
+                    roomNo = "A303";
+                t16.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secc where day = '2' and slot = '1'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t21.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A203";
+                else
+                    roomNo = "A303";
+                t21.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secc where day = '2' and slot = '2'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t22.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A203";
+                else
+                    roomNo = "A303";
+                t22.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secc where day = '2' and slot = '3'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t23.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A203";
+                else
+                    roomNo = "A303";
+                t23.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secc where day = '2' and slot = '4'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t24.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A203";
+                else
+                    roomNo = "A303";
+                t24.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secc where day = '2' and slot = '5'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t25.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A203";
+                else
+                    roomNo = "A303";
+                t25.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secc where day = '2' and slot = '6'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t26.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A203";
+                else
+                    roomNo = "A303";
+                t26.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secc where day = '3' and slot = '1'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t31.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A203";
+                else
+                    roomNo = "A303";
+                t31.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secc where day = '3' and slot = '2'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t32.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A203";
+                else
+                    roomNo = "A303";
+                t32.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secc where day = '3' and slot = '3'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t33.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A203";
+                else
+                    roomNo = "A303";
+                t33.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secc where day = '3' and slot = '4'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t34.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A203";
+                else
+                    roomNo = "A303";
+                t34.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secc where day = '3' and slot = '5'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t35.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A203";
+                else
+                    roomNo = "A303";
+                t35.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secc where day = '3' and slot = '6'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t36.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A203";
+                else
+                    roomNo = "A303";
+                t36.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secc where day = '4' and slot = '1'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t41.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A203";
+                else
+                    roomNo = "A303";
+                t41.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secc where day = '4' and slot = '2'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t42.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A203";
+                else
+                    roomNo = "A303";
+                t42.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secc where day = '4' and slot = '3'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t43.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A203";
+                else
+                    roomNo = "A303";
+                t43.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secc where day = '4' and slot = '4'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t44.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A203";
+                else
+                    roomNo = "A303";
+                t44.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secc where day = '4' and slot = '5'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t45.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A203";
+                else
+                    roomNo = "A303";
+                t45.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secc where day = '4' and slot = '6'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t46.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A203";
+                else
+                    roomNo = "A303";
+                t46.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secc where day = '5' and slot = '1'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t51.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A203";
+                else
+                    roomNo = "A303";
+                t51.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secc where day = '5' and slot = '2'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t52.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A203";
+                else
+                    roomNo = "A303";
+                t52.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secc where day = '5' and slot = '3'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t53.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A203";
+                else
+                    roomNo = "A303";
+                t53.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secc where day = '5' and slot = '4'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t54.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A203";
+                else
+                    roomNo = "A303";
+                t54.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secc where day = '5' and slot = '5'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t55.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A203";
+                else
+                    roomNo = "A303";
+                t55.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secc where day = '5' and slot = '6'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t56.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A203";
+                else
+                    roomNo = "A303";
+                t56.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+        }
+        else if(sec=='D')
+        {
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secd where day = '1' and slot = '1'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t11.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A204";
+                else
+                    roomNo = "A304";
+                t11.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secd where day = '1' and slot = '2'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t12.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A204";
+                else
+                    roomNo = "A304";
+                t12.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secd where day = '1' and slot = '3'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t13.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A204";
+                else
+                    roomNo = "A304";
+                t13.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secd where day = '1' and slot = '4'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t14.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A204";
+                else
+                    roomNo = "A304";
+                t14.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secd where day = '1' and slot = '5'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t15.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A204";
+                else
+                    roomNo = "A304";
+                t15.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secd where day = '1' and slot = '6'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t16.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A204";
+                else
+                    roomNo = "A304";
+                t16.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secd where day = '2' and slot = '1'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t21.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A204";
+                else
+                    roomNo = "A304";
+                t21.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secd where day = '2' and slot = '2'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t22.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A204";
+                else
+                    roomNo = "A304";
+                t22.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secd where day = '2' and slot = '3'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t23.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A204";
+                else
+                    roomNo = "A304";
+                t23.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secd where day = '2' and slot = '4'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t24.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A204";
+                else
+                    roomNo = "A304";
+                t24.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secd where day = '2' and slot = '5'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t25.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A204";
+                else
+                    roomNo = "A304";
+                t25.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secd where day = '2' and slot = '6'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t26.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A204";
+                else
+                    roomNo = "A304";
+                t26.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secd where day = '3' and slot = '1'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t31.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A204";
+                else
+                    roomNo = "A304";
+                t31.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secd where day = '3' and slot = '2'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t32.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A204";
+                else
+                    roomNo = "A304";
+                t32.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secd where day = '3' and slot = '3'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t33.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A204";
+                else
+                    roomNo = "A304";
+                t33.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secd where day = '3' and slot = '4'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t34.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A204";
+                else
+                    roomNo = "A304";
+                t34.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secd where day = '3' and slot = '5'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t35.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A204";
+                else
+                    roomNo = "A304";
+                t35.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secd where day = '3' and slot = '6'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t36.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A204";
+                else
+                    roomNo = "A304";
+                t36.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secd where day = '4' and slot = '1'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t41.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A204";
+                else
+                    roomNo = "A304";
+                t41.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secd where day = '4' and slot = '2'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t42.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A204";
+                else
+                    roomNo = "A304";
+                t42.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secd where day = '4' and slot = '3'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t43.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A204";
+                else
+                    roomNo = "A304";
+                t43.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secd where day = '4' and slot = '4'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t44.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A204";
+                else
+                    roomNo = "A304";
+                t44.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secd where day = '4' and slot = '5'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t45.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A204";
+                else
+                    roomNo = "A304";
+                t45.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secd where day = '4' and slot = '6'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t46.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A204";
+                else
+                    roomNo = "A304";
+                t46.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secd where day = '5' and slot = '1'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t51.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A204";
+                else
+                    roomNo = "A304";
+                t51.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secd where day = '5' and slot = '2'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t52.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A204";
+                else
+                    roomNo = "A304";
+                t52.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secd where day = '5' and slot = '3'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t53.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A204";
+                else
+                    roomNo = "A304";
+                t53.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secd where day = '5' and slot = '4'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t54.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A204";
+                else
+                    roomNo = "A304";
+                t54.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secd where day = '5' and slot = '5'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t55.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A204";
+                else
+                    roomNo = "A304";
+                t55.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+
+            c1 = dataBooze.rawQuery("SELECT course,slot FROM secd where day = '5' and slot = '6'",null);
+            c1.moveToNext();
+            if(c1.getString(0).equals("FREE"))
+            {
+                t56.setText("FREE");
+            }
+            else
+            {
+                slot = Integer.parseInt(c1.getString(1));
+                c2 = dataBooze.rawQuery("SELECT name FROM faculty where course_id = '"+c1.getString(0)+"'",null);
+                c2.moveToNext();
+                facultyName = c2.getString(0);
+                c3 = dataBooze.rawQuery("SELECT name FROM course where course_id = '"+c1.getString(0)+"'",null);
+                c3.moveToNext();
+                courseName = c3.getString(0);
+                if(slot<=3)
+                    roomNo = "A204";
+                else
+                    roomNo = "A304";
+                t56.setText(courseName+"\n"+facultyName+"\n"+roomNo);
+            }
+        }
+        
     }
     
-    int s = 0;
+    int s;
     
     @Override
     public void onClick(View view)
     {
-        if(view==t11)
-        {
-            s = 0;
-            if(editAccess.equals("1"))
-                dialogPrompt();
-            if(section.equals("A")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update seca set course = 'FREE' where day = '1' and slot = '1'");
-                    t11.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '1' and slot = '1'");
-                    t11.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secb set course = 'FREE' where day = '1' and slot = '1'");
-                    t11.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '1' and slot = '1'");
-                    t11.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secc set course = 'FREE' where day = '1' and slot = '1'");
-                    t11.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '1' and slot = '1'");
-                    t11.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secd set course = 'FREE' where day = '1' and slot = '1'");
-                    t11.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '1' and slot = '1'");
-                    t11.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-        }
-        else if(view==t12)
-        {
-            s = 0;
-            if(editAccess.equals("1"))
-                dialogPrompt();
-            if(section.equals("A")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update seca set course = 'FREE' where day = '1' and slot = '2'");
-                    t12.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '1' and slot = '2'");
-                    t12.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secb set course = 'FREE' where day = '1' and slot = '2'");
-                    t12.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '1' and slot = '2'");
-                    t12.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secc set course = 'FREE' where day = '1' and slot = '2'");
-                    t12.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '1' and slot = '2'");
-                    t12.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secd set course = 'FREE' where day = '1' and slot = '2'");
-                    t12.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '1' and slot = '2'");
-                    t12.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-        }
-        else if(view==t13)
-        {
-            s = 0;
-            if(editAccess.equals("1"))
-                dialogPrompt();
-            if(section.equals("A")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update seca set course = 'FREE' where day = '1' and slot = '3'");
-                    t13.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '1' and slot = '3'");
-                    t13.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secb set course = 'FREE' where day = '1' and slot = '3'");
-                    t13.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '1' and slot = '3'");
-                    t13.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secc set course = 'FREE' where day = '1' and slot = '3'");
-                    t13.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '1' and slot = '3'");
-                    t13.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secd set course = 'FREE' where day = '1' and slot = '3'");
-                    t13.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '1' and slot = '3'");
-                    t13.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-        }
-        else if(view==t14)
-        {
-            s = 0;
-            if(editAccess.equals("1"))
-                dialogPrompt();
-            if(section.equals("A")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update seca set course = 'FREE' where day = '1' and slot = '4'");
-                    t14.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '1' and slot = '4'");
-                    t14.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secb set course = 'FREE' where day = '1' and slot = '4'");
-                    t14.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '1' and slot = '4'");
-                    t14.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secc set course = 'FREE' where day = '1' and slot = '4'");
-                    t14.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '1' and slot = '4'");
-                    t14.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secd set course = 'FREE' where day = '1' and slot = '4'");
-                    t14.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '1' and slot = '4'");
-                    t14.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-        }
-        else if(view==t15)
-        {
-            s = 0;
-            if(editAccess.equals("1"))
-                dialogPrompt();
-            if(section.equals("A")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update seca set course = 'FREE' where day = '1' and slot = '5'");
-                    t15.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '1' and slot = '5'");
-                    t15.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secb set course = 'FREE' where day = '1' and slot = '5'");
-                    t15.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '1' and slot = '5'");
-                    t15.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secc set course = 'FREE' where day = '1' and slot = '5'");
-                    t15.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '1' and slot = '5'");
-                    t15.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secd set course = 'FREE' where day = '1' and slot = '5'");
-                    t15.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '1' and slot = '5'");
-                    t15.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-        }
-        else if(view==t16)
-        {
-            s = 0;
-            if(editAccess.equals("1"))
-                dialogPrompt();
-            if(section.equals("A")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update seca set course = 'FREE' where day = '1' and slot = '6'");
-                    t16.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '1' and slot = '6'");
-                    t16.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secb set course = 'FREE' where day = '1' and slot = '6'");
-                    t16.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '1' and slot = '6'");
-                    t16.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secc set course = 'FREE' where day = '1' and slot = '6'");
-                    t16.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '1' and slot = '6'");
-                    t16.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secd set course = 'FREE' where day = '1' and slot = '6'");
-                    t16.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '1' and slot = '6'");
-                    t16.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-        }
-        else if(view==t21)
-        {
-            s = 0;
-            if(editAccess.equals("1"))
-                dialogPrompt();
-            if(section.equals("A")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update seca set course = 'FREE' where day = '2' and slot = '1'");
-                    t21.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '2' and slot = '1'");
-                    t21.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secb set course = 'FREE' where day = '2' and slot = '1'");
-                    t21.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '2' and slot = '1'");
-                    t21.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secc set course = 'FREE' where day = '2' and slot = '1'");
-                    t21.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '2' and slot = '1'");
-                    t21.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secd set course = 'FREE' where day = '2' and slot = '1'");
-                    t21.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '2' and slot = '1'");
-                    t21.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-        }
-        else if(view==t22)
-        {
-            s = 0;
-            if(editAccess.equals("1"))
-                dialogPrompt();
-            if(section.equals("A")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update seca set course = 'FREE' where day = '2' and slot = '2'");
-                    t22.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '2' and slot = '2'");
-                    t22.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secb set course = 'FREE' where day = '2' and slot = '2'");
-                    t22.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '2' and slot = '2'");
-                    t22.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secc set course = 'FREE' where day = '2' and slot = '2'");
-                    t22.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '2' and slot = '2'");
-                    t22.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secd set course = 'FREE' where day = '2' and slot = '2'");
-                    t22.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '2' and slot = '2'");
-                    t22.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-        }
-        else if(view==t23)
-        {
-            s = 0;
-            if(editAccess.equals("1"))
-                dialogPrompt();
-            if(section.equals("A")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update seca set course = 'FREE' where day = '2' and slot = '3'");
-                    t23.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '2' and slot = '3'");
-                    t23.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secb set course = 'FREE' where day = '2' and slot = '3'");
-                    t23.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '2' and slot = '3'");
-                    t23.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secc set course = 'FREE' where day = '2' and slot = '3'");
-                    t23.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '2' and slot = '3'");
-                    t23.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secd set course = 'FREE' where day = '2' and slot = '3'");
-                    t23.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '2' and slot = '3'");
-                    t23.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-        }
-        else if(view==t24)
-        {
-            s = 0;
-            if(editAccess.equals("1"))
-                dialogPrompt();
-            if(section.equals("A")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update seca set course = 'FREE' where day = '2' and slot = '4'");
-                    t24.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '2' and slot = '4'");
-                    t24.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secb set course = 'FREE' where day = '2' and slot = '4'");
-                    t24.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '2' and slot = '4'");
-                    t24.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secc set course = 'FREE' where day = '2' and slot = '4'");
-                    t24.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '2' and slot = '4'");
-                    t24.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secd set course = 'FREE' where day = '2' and slot = '4'");
-                    t24.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '2' and slot = '4'");
-                    t24.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-        }
-        else if(view==t25)
-        {
-            s = 0;
-            if(editAccess.equals("1"))
-                dialogPrompt();
-            if(section.equals("A")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update seca set course = 'FREE' where day = '2' and slot = '5'");
-                    t25.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '2' and slot = '5'");
-                    t25.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secb set course = 'FREE' where day = '2' and slot = '5'");
-                    t25.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '2' and slot = '5'");
-                    t25.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secc set course = 'FREE' where day = '2' and slot = '5'");
-                    t25.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '2' and slot = '5'");
-                    t25.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secd set course = 'FREE' where day = '2' and slot = '5'");
-                    t25.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '2' and slot = '5'");
-                    t25.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-        }
-        else if(view==t26)
-        {
-            s = 0;
-            if(editAccess.equals("1"))
-                dialogPrompt();
-            if(section.equals("A")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update seca set course = 'FREE' where day = '2' and slot = '6'");
-                    t26.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '2' and slot = '6'");
-                    t26.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secb set course = 'FREE' where day = '2' and slot = '6'");
-                    t26.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '2' and slot = '6'");
-                    t26.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secc set course = 'FREE' where day = '2' and slot = '6'");
-                    t26.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '2' and slot = '6'");
-                    t26.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secd set course = 'FREE' where day = '2' and slot = '6'");
-                    t26.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '2' and slot = '6'");
-                    t26.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-        }
-        else if(view==t31)
-        {
-            s = 0;
-            if(editAccess.equals("1"))
-                dialogPrompt();
-            if(section.equals("A")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update seca set course = 'FREE' where day = '3' and slot = '1'");
-                    t31.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '3' and slot = '1'");
-                    t31.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secb set course = 'FREE' where day = '3' and slot = '1'");
-                    t31.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '3' and slot = '1'");
-                    t31.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secc set course = 'FREE' where day = '3' and slot = '1'");
-                    t31.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '3' and slot = '1'");
-                    t31.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secd set course = 'FREE' where day = '3' and slot = '1'");
-                    t31.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '3' and slot = '1'");
-                    t31.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-        }
-        else if(view==t32)
-        {
-            s = 0;
-            if(editAccess.equals("1"))
-                dialogPrompt();
-            if(section.equals("A")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update seca set course = 'FREE' where day = '3' and slot = '2'");
-                    t32.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '3' and slot = '2'");
-                    t32.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secb set course = 'FREE' where day = '3' and slot = '2'");
-                    t32.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '3' and slot = '2'");
-                    t32.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secc set course = 'FREE' where day = '3' and slot = '2'");
-                    t32.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '3' and slot = '2'");
-                    t32.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secd set course = 'FREE' where day = '3' and slot = '2'");
-                    t32.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '3' and slot = '2'");
-                    t32.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-        }
-        else if(view==t33)
-        {
-            s = 0;
-            if(editAccess.equals("1"))
-                dialogPrompt();
-            if(section.equals("A")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update seca set course = 'FREE' where day = '3' and slot = '3'");
-                    t33.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '3' and slot = '3'");
-                    t33.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secb set course = 'FREE' where day = '3' and slot = '3'");
-                    t33.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '3' and slot = '3'");
-                    t33.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secc set course = 'FREE' where day = '3' and slot = '3'");
-                    t33.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '3' and slot = '3'");
-                    t33.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secd set course = 'FREE' where day = '3' and slot = '3'");
-                    t33.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '3' and slot = '3'");
-                    t33.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-        }
-        else if(view==t34)
-        {
-            s = 0;
-            if(editAccess.equals("1"))
-                dialogPrompt();
-            if(section.equals("A")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update seca set course = 'FREE' where day = '3' and slot = '4'");
-                    t34.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '3' and slot = '4'");
-                    t34.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secb set course = 'FREE' where day = '3' and slot = '4'");
-                    t34.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '3' and slot = '4'");
-                    t34.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secc set course = 'FREE' where day = '3' and slot = '4'");
-                    t34.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '3' and slot = '4'");
-                    t34.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secd set course = 'FREE' where day = '3' and slot = '4'");
-                    t34.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '3' and slot = '4'");
-                    t34.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-        }
-        else if(view==t35)
-        {
-            s = 0;
-            if(editAccess.equals("1"))
-                dialogPrompt();
-            if(section.equals("A")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update seca set course = 'FREE' where day = '3' and slot = '5'");
-                    t35.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '3' and slot = '5'");
-                    t35.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secb set course = 'FREE' where day = '3' and slot = '5'");
-                    t35.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '3' and slot = '5'");
-                    t35.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secc set course = 'FREE' where day = '3' and slot = '5'");
-                    t35.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '3' and slot = '5'");
-                    t35.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secd set course = 'FREE' where day = '3' and slot = '5'");
-                    t35.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '3' and slot = '5'");
-                    t35.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-        }
-        else if(view==t36)
-        {
-            s = 0;
-            if(editAccess.equals("1"))
-                dialogPrompt();
-            if(section.equals("A")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update seca set course = 'FREE' where day = '3' and slot = '6'");
-                    t36.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '3' and slot = '6'");
-                    t36.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secb set course = 'FREE' where day = '3' and slot = '6'");
-                    t36.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '3' and slot = '6'");
-                    t36.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secc set course = 'FREE' where day = '3' and slot = '6'");
-                    t36.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '3' and slot = '6'");
-                    t36.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secd set course = 'FREE' where day = '3' and slot = '6'");
-                    t36.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '3' and slot = '6'");
-                    t36.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-        }
-        else if(view==t41)
-        {
-            s = 0;
-            if(editAccess.equals("1"))
-                dialogPrompt();
-            if(section.equals("A")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update seca set course = 'FREE' where day = '4' and slot = '1'");
-                    t41.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '4' and slot = '1'");
-                    t41.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secb set course = 'FREE' where day = '4' and slot = '1'");
-                    t41.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '4' and slot = '1'");
-                    t41.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secc set course = 'FREE' where day = '4' and slot = '1'");
-                    t41.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '4' and slot = '1'");
-                    t41.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secd set course = 'FREE' where day = '4' and slot = '1'");
-                    t41.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '4' and slot = '1'");
-                    t41.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-        }
-        else if(view==t42)
-        {
-            s = 0;
-            if(editAccess.equals("1"))
-                dialogPrompt();
-            if(section.equals("A")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update seca set course = 'FREE' where day = '4' and slot = '2'");
-                    t42.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '4' and slot = '2'");
-                    t42.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secb set course = 'FREE' where day = '4' and slot = '2'");
-                    t42.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '4' and slot = '2'");
-                    t42.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secc set course = 'FREE' where day = '4' and slot = '2'");
-                    t42.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '4' and slot = '2'");
-                    t42.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secd set course = 'FREE' where day = '4' and slot = '2'");
-                    t42.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '4' and slot = '2'");
-                    t42.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-        }
-        else if(view==t43)
-        {
-            s = 0;
-            if(editAccess.equals("1"))
-                dialogPrompt();
-            if(section.equals("A")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update seca set course = 'FREE' where day = '4' and slot = '3'");
-                    t43.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '4' and slot = '3'");
-                    t43.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secb set course = 'FREE' where day = '4' and slot = '3'");
-                    t43.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '4' and slot = '3'");
-                    t43.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secc set course = 'FREE' where day = '4' and slot = '3'");
-                    t43.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '4' and slot = '3'");
-                    t43.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secd set course = 'FREE' where day = '4' and slot = '3'");
-                    t43.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '4' and slot = '3'");
-                    t43.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-        }
-        else if(view==t44)
-        {
-            s = 0;
-            if(editAccess.equals("1"))
-                dialogPrompt();
-            if(section.equals("A")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update seca set course = 'FREE' where day = '4' and slot = '4'");
-                    t44.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '4' and slot = '4'");
-                    t44.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secb set course = 'FREE' where day = '4' and slot = '4'");
-                    t44.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '4' and slot = '4'");
-                    t44.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secc set course = 'FREE' where day = '4' and slot = '4'");
-                    t44.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '4' and slot = '4'");
-                    t44.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secd set course = 'FREE' where day = '4' and slot = '4'");
-                    t44.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '4' and slot = '4'");
-                    t44.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-        }
-        else if(view==t45)
-        {
-            s = 0;
-            if(editAccess.equals("1"))
-                dialogPrompt();
-            if(section.equals("A")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update seca set course = 'FREE' where day = '4' and slot = '5'");
-                    t45.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '4' and slot = '5'");
-                    t45.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secb set course = 'FREE' where day = '4' and slot = '5'");
-                    t45.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '4' and slot = '5'");
-                    t45.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secc set course = 'FREE' where day = '4' and slot = '5'");
-                    t45.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '4' and slot = '5'");
-                    t45.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secd set course = 'FREE' where day = '4' and slot = '5'");
-                    t45.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '4' and slot = '5'");
-                    t45.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-        }
-        else if(view==t46)
-        {
-            s = 0;
-            if(editAccess.equals("1"))
-                dialogPrompt();
-            if(section.equals("A")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update seca set course = 'FREE' where day = '4' and slot = '6'");
-                    t46.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '4' and slot = '6'");
-                    t46.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secb set course = 'FREE' where day = '4' and slot = '6'");
-                    t46.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '4' and slot = '6'");
-                    t46.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secc set course = 'FREE' where day = '4' and slot = '6'");
-                    t46.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '4' and slot = '6'");
-                    t46.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secd set course = 'FREE' where day = '4' and slot = '6'");
-                    t46.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '4' and slot = '6'");
-                    t46.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-        }
-        else if(view==t51)
-        {
-            s = 0;
-            if(editAccess.equals("1"))
-                dialogPrompt();
-            if(section.equals("A")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update seca set course = 'FREE' where day = '5' and slot = '1'");
-                    t51.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '5' and slot = '1'");
-                    t51.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secb set course = 'FREE' where day = '5' and slot = '1'");
-                    t51.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '5' and slot = '1'");
-                    t51.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secc set course = 'FREE' where day = '5' and slot = '1'");
-                    t51.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '5' and slot = '1'");
-                    t51.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secd set course = 'FREE' where day = '5' and slot = '1'");
-                    t51.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '5' and slot = '1'");
-                    t51.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-        }
-        else if(view==t52)
-        {
-            s = 0;
-            if(editAccess.equals("1"))
-                dialogPrompt();
-            if(section.equals("A")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update seca set course = 'FREE' where day = '5' and slot = '2'");
-                    t52.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '5' and slot = '2'");
-                    t52.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secb set course = 'FREE' where day = '5' and slot = '2'");
-                    t52.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '5' and slot = '2'");
-                    t52.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secc set course = 'FREE' where day = '5' and slot = '2'");
-                    t52.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '5' and slot = '2'");
-                    t52.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secd set course = 'FREE' where day = '5' and slot = '2'");
-                    t52.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '5' and slot = '2'");
-                    t52.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-        }
-        else if(view==t53)
-        {
-            s = 0;
-            if(editAccess.equals("1"))
-                dialogPrompt();
-            if(section.equals("A")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update seca set course = 'FREE' where day = '5' and slot = '3'");
-                    t53.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '5' and slot = '3'");
-                    t53.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secb set course = 'FREE' where day = '5' and slot = '3'");
-                    t53.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '5' and slot = '3'");
-                    t53.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secc set course = 'FREE' where day = '5' and slot = '3'");
-                    t53.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '5' and slot = '3'");
-                    t53.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secd set course = 'FREE' where day = '5' and slot = '3'");
-                    t53.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '5' and slot = '3'");
-                    t53.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-        }
-        else if(view==t54)
-        {
-            s = 0;
-            if(editAccess.equals("1"))
-                dialogPrompt();
-            if(section.equals("A")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update seca set course = 'FREE' where day = '5' and slot = '4'");
-                    t54.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '5' and slot = '4'");
-                    t54.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secb set course = 'FREE' where day = '5' and slot = '4'");
-                    t54.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '5' and slot = '4'");
-                    t54.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secc set course = 'FREE' where day = '5' and slot = '4'");
-                    t54.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '5' and slot = '4'");
-                    t54.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secd set course = 'FREE' where day = '5' and slot = '4'");
-                    t54.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '5' and slot = '4'");
-                    t54.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-        }
-        else if(view==t55)
-        {
-            s = 0;
-            if(editAccess.equals("1"))
-                dialogPrompt();
-            if(section.equals("A")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update seca set course = 'FREE' where day = '5' and slot = '5'");
-                    t55.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '5' and slot = '5'");
-                    t55.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secb set course = 'FREE' where day = '5' and slot = '5'");
-                    t55.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '5' and slot = '5'");
-                    t55.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secc set course = 'FREE' where day = '5' and slot = '5'");
-                    t55.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '5' and slot = '5'");
-                    t55.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secd set course = 'FREE' where day = '5' and slot = '5'");
-                    t55.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '5' and slot = '5'");
-                    t55.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-        }
-        else if(view==t56)
-        {
-            s = 0;
-            if(editAccess.equals("1"))
-                dialogPrompt();
-            if(section.equals("A")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update seca set course = 'FREE' where day = '5' and slot = '6'");
-                    t56.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update seca set course = '"+courseCode+"' where day = '5' and slot = '6'");
-                    t56.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("B")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secb set course = 'FREE' where day = '5' and slot = '6'");
-                    t56.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secb set course = '"+courseCode+"' where day = '5' and slot = '6'");
-                    t56.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("C")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secc set course = 'FREE' where day = '5' and slot = '6'");
-                    t56.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secc set course = '"+courseCode+"' where day = '5' and slot = '6'");
-                    t56.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-            else if(section.equals("D")&&editAccess.equals("1")&&(s==1))
-            {
-                if(courseName.equals("FREE"))
-                {
-                    dataBooze.execSQL("update secd set course = 'FREE' where day = '5' and slot = '6'");
-                    t56.setText("FREE");
-                }
-                else
-                {
-                    dataBooze.execSQL("update secd set course = '"+courseCode+"' where day = '5' and slot = '6'");
-                    t56.setText(courseName+"\n"+facultyName+"\n"+roomNo);
-                }
-            }
-        }
+        dialogPrompt(view);
     }
 }
